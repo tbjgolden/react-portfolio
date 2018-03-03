@@ -1,0 +1,13 @@
+.Columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Columns-column {
+  flex: 1 0 0;
+  padding: 40px 12px;
+}
+
+.Columns-column * {
+  text-align: center;
+}

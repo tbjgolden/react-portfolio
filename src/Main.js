@@ -1,6 +1,8 @@
 import React from 'react';
 import Columns from './Columns';
 import Strong from './Strong';
+import WebDiagram from './WebDiagram';
+import './Main.css';
 
 export default ({ headerHeight, screenWidth, isMobile }) => {
   const lorem = 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus ut diam a est egestas gravida. Integer turpis odio, volutpat a blandit vel, blandit ut urna. Donec efficitur interdum commodo. Donec auctor, ipsum ac aliquet vehicula, dolor tortor feugiat urna, vel mollis elit nibh id risus. Donec dapibus placerat tincidunt. Nullam luctus leo eu arcu convallis, non congue augue eleifend. Etiam interdum ante iaculis, iaculis lectus eu, mattis libero. Etiam ut volutpat risus. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque et augue neque.';
@@ -11,7 +13,7 @@ export default ({ headerHeight, screenWidth, isMobile }) => {
   };
 
   const textStyle = {
-    top: `calc(100vh - 40px - ${headerHeight}px - ${screenWidth < 480 ? '42' : '60'}px)`
+    top: `calc(100vh - 40px - ${headerHeight}px - ${screenWidth <= 700 ? '42' : '60'}px)`
   };
 
   return (
@@ -41,6 +43,7 @@ export default ({ headerHeight, screenWidth, isMobile }) => {
             <div>
               <Strong>Web</Strong>
               <p>Some paragraph</p>
+              <WebDiagram />
             </div>
             <div>
               <Strong>Mobile</Strong>
