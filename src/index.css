@@ -1,5 +1,248 @@
+:root {
+  --row-container-max-width: 960px;
+
+  --spacing-unit: 24px;
+}
+
 body {
   margin: 0;
   padding: 0;
-  font-family: sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  background-color: #fff;
+  font-size: 19px;
+  line-height: 1.47384;
+  font-weight: 300;
+  letter-spacing: .018em;
+  color: #111;
+}
+
+#root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+:first-child {
+  margin-top: 0;
+}
+
+:last-child {
+  margin-bottom: 0;
+}
+
+h1, h2, h3, h4 {
+  margin: calc(.6ex - 4px) 0;
+}
+
+h1:first-child,
+h2:first-child,
+h3:first-child,
+h4:first-child {
+  margin-top: 0;
+}
+
+h1:last-child,
+h2:last-child,
+h3:last-child,
+h4:last-child {
+  margin-bottom: 0;
+}
+
+h1, .jumbotron h3 {
+  font-size: 56px;
+  line-height: 1.07143;
+  font-weight: 600;
+  letter-spacing: -.005em;
+}
+
+h2, .jumbotron h4 {
+  font-size: 27px;
+  line-height: 1.14815;
+  font-weight: 400;
+  letter-spacing: .008em;
+}
+
+hr {
+  margin: 80px;
+  border: 0;
+}
+
+a {
+  color: #0070c9;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+strong {
+  font-weight: inherit;
+}
+
+.centre {
+  text-align: center;
+}
+
+/* Component styles */
+
+.App-wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.App-row {
+  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.025) 100%);
+  padding: 40px 0;
+}
+
+.App-row-sizer {
+  max-width: var(--row-container-max-width);
+  margin: 0 auto;
+  padding: 40px;
+}
+
+.Header, .Main, .Footer {
+  margin: 0;
+  transform: translate3d(0, 0, 0);
+  -webkit-transform: translate3d(0, 0, 0);
+  -webkit-backface-visibility: hidden;
+  -webkit-perspective: 1000;
+}
+
+.Header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+
+.Header::before {
+  content: '';
+  z-index: -1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'><path fill='#ccc' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'></path></svg>");
+  opacity: 0.9;
+}
+
+.Main {
+  flex: 1 0 auto;
+  margin-top: 4px;
+  padding: 40px 0 0;
+}
+
+.jumbotron {
+  transition: min-height .3s ease-in-out;
+}
+
+.jumbotron-tagline {
+  font-size: 80px;
+  line-height: 1.0625;
+  font-weight: 600;
+  letter-spacing: -.025em;
+}
+
+.jumbotron-top {
+  position: absolute;
+  top: 0;
+  left: 40px;
+  width: calc(100% - 80px);
+  text-align: center;
+  z-index: 1;
+}
+
+.Columns {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.Columns-column {
+  flex: 1 0 0;
+  padding: 40px 12px;
+}
+
+.Columns-column * {
+  text-align: center;
+}
+
+#jumbotron-laptop {
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  overflow-x: visible;
+}
+
+#design-film-link {
+  font-size: 22px;
+  line-height: 1.45455;
+  font-weight: 300;
+  letter-spacing: .016em;
+}
+
+#design-film-link > a::after {
+  content: '';
+  display: inline-block;
+  margin-left: 4px;
+  height: 24px;
+  width: 24px;
+  vertical-align: middle;
+  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='32' height='32' viewBox='0 0 512 512'><path fill='#0070c9' stroke='#0070c9' stroke-width='8' d='m354.2,247.4l-135.1-92.4c-4.2-3.1-15.4-3.1-16.3,8.6v184.8c1,11.7 12.4,11.9 16.3,8.6l135.1-92.4c3.5-2.1 8.3-10.7 0-17.2zm-130.5,81.3v-145.4l106.1,72.7-106.1,72.7z' /><path fill='#0070c9' stroke='#0070c9' stroke-width='6' d='M256,11C120.9,11,11,120.9,11,256s109.9,245,245,245s245-109.9,245-245S391.1,11,256,11z M256,480.1 C132.4,480.1,31.9,379.6,31.9,256S132.4,31.9,256,31.9S480.1,132.4,480.1,256S379.6,480.1,256,480.1z'/></svg>");
+  background-size: cover;
+}
+
+#jumbotron-laptop-image {
+  width: 100%;
+  height: auto;
+  border-top: 180px solid #fff;
+  border-right: 240px solid #fff;
+}
+
+#jumbotron-laptop .jumbotron-text {
+  position: absolute;
+  left: calc(100% - 240px - 1vw - 12px);
+}
+
+@media (max-width: 991px) {
+  #jumbotron-laptop-image {
+    border-width: 0 0 0 180px;
+    transform: rotate(90deg);
+    height: calc(100vw - 80px);
+    position: relative;
+    bottom: 120px;
+  }
+}
+
+
+@media (max-width: 479px) {
+  h1,
+  .jumbotron h3,
+  .jumbotron-tagline {
+    font-size: 40px;
+    line-height: 1.0625;
+    letter-spacing: 0;
+  }
+
+  #jumbotron-laptop .jumbotron-text {
+    left: 0;
+    right: 0;
+    transform: none;
+  }
 }
