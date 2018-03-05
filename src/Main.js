@@ -43,7 +43,7 @@ export default ({ headerHeight, screenWidth, isMobile }) => {
         <div className='App-row-sizer'>
           <div className='App-row-title'>TomGolden writes code.</div>
           <div className='App-row-description'>
-            <Strong>It also writes Unicode <span role='img' aria-label='smirk emoji'>&#x1F60F;</span></Strong>
+            <Strong>He also writes Unicode <span role='img' aria-label='smirk emoji'>&#x1F60F;</span></Strong>
           </div>
         </div>
       </div>

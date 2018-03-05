@@ -1,0 +1,62 @@
+@font-face {
+  font-family:'SF Pro Display';
+  font-style:normal;
+  font-weight:100;
+  src:url("https://cdn.rawgit.com/AppleDesignResources/SanFranciscoFont/59cf0dc3/SanFranciscoDisplay-Ultralight.otf") format("opentype");
+}
+
+@font-face {
+  font-family:'SF Pro Display';
+  font-style:normal;
+  font-weight:200;
+  src:url("https://cdn.rawgit.com/AppleDesignResources/SanFranciscoFont/59cf0dc3/SanFranciscoDisplay-Thin.otf") format("opentype");
+}
+
+@font-face {
+  font-family:'SF Pro Display';
+  font-style:normal;
+  font-weight:300;
+  src:url("https://cdn.rawgit.com/AppleDesignResources/SanFranciscoFont/59cf0dc3/SanFranciscoDisplay-Light.otf") format("opentype");
+}
+
+@font-face {
+  font-family:'SF Pro Display';
+  font-style:normal;
+  font-weight:400;
+  src:url("https://cdn.rawgit.com/AppleDesignResources/SanFranciscoFont/59cf0dc3/SanFranciscoDisplay-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family:'SF Pro Display';
+  font-style:normal;
+  font-weight:500;
+  src:url("https://cdn.rawgit.com/AppleDesignResources/SanFranciscoFont/59cf0dc3/SanFranciscoDisplay-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family:'SF Pro Display';
+  font-style:normal;
+  font-weight:600;
+  src:url("https://cdn.rawgit.com/AppleDesignResources/SanFranciscoFont/59cf0dc3/SanFranciscoDisplay-Semibold.otf") format("opentype");
+}
+
+@font-face {
+  font-family:'SF Pro Display';
+  font-style:normal;
+  font-weight:700;
+  src:url("https://cdn.rawgit.com/AppleDesignResources/SanFranciscoFont/59cf0dc3/SanFranciscoDisplay-Bold.otf") format("opentype");
+}
+
+@font-face {
+  font-family:'SF Pro Display';
+  font-style:normal;
+  font-weight:800;
+  src:url("https://cdn.rawgit.com/AppleDesignResources/SanFranciscoFont/59cf0dc3/SanFranciscoDisplay-Heavy.otf") format("opentype");
+}
+
+@font-face {
+  font-family:'SF Pro Display';
+  font-style:normal;
+  font-weight:900;
+  src:url("https://cdn.rawgit.com/AppleDesignResources/SanFranciscoFont/59cf0dc3/SanFranciscoDisplay-Black.otf") format("opentype");
+}

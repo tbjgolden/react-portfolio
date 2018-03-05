@@ -7,6 +7,11 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico">
     <title>TomGolden&trade;</title>
+    <script>
+      if (!/Mac(intosh|Intel|PPX|68K)/g.test(window.navigator.platform || '')) {
+        document.write('<link rel="stylesheet" href="fonts.css" type="text/css">');
+      }
+    </script>
   </head>
   <body>
     <noscript>
