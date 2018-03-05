@@ -66,7 +66,7 @@ h1, .jumbotron h3 {
   letter-spacing: -.005em;
 }
 
-h2, .jumbotron h4 {
+h2, .jumbotron h4, .subtitle {
   font-size: 27px;
   line-height: 1.14815;
   font-weight: 400;
@@ -74,7 +74,7 @@ h2, .jumbotron h4 {
 }
 
 hr {
-  margin: 80px;
+  margin: 20px 0;
   border: 0;
 }
 
@@ -93,6 +93,78 @@ strong {
 
 .centre {
   text-align: center;
+}
+
+.App-row-title {
+  font-size: 48px;
+  line-height: 1.08365;
+  font-weight: 600;
+  letter-spacing: -.003em;
+  text-align: center;
+}
+
+.App-row-description,
+.App-row-header {
+  font-size: 21px;
+  line-height: 1.38105;
+  letter-spacing: .011em;
+  text-align: center;
+}
+
+.App-row-description {
+  color: #333;
+  font-weight: 400;
+}
+
+.App-row-header {
+  font-weight: 500;
+}
+
+.App-row-description:not(:last-child) {
+  margin-bottom: 1.6ex;
+}
+
+.App-row-header:not(:last-child) {
+  margin-bottom: 1.3ex;
+}
+
+@media (max-width: 1068px) {
+  .App-row-title {
+    font-size: 27px;
+    line-height: 1.2963;
+    letter-spacing: .008em;
+  }
+
+  .App-row-description,
+  .App-row-header {
+    font-size: 19px;
+    line-height: 1.42115;
+    letter-spacing: .012em;
+  }
+
+  .jumbotron-tagline {
+    font-size: 59px;
+    line-height: 1.10227;
+    font-weight: 500;
+    letter-spacing: -.025em;
+  }
+}
+
+@media (max-width: 735px) {
+  .App-row-title {
+    font-size: 24px;
+    line-height: 1.33349;
+    letter-spacing: .009em;
+    text-align: left;
+  }
+
+  .App-row-description,
+  .App-row-header {
+    font-size: 18px;
+    line-height: 1.4446;
+    letter-spacing: .016em;
+    text-align: left;
+  }
 }
 
 /* Component styles */
@@ -153,8 +225,9 @@ strong {
 #jumbotron-laptop-image {
   width: 100%;
   height: auto;
-  border-top: 180px solid #fff;
-  border-right: 240px solid #fff;
+  border: 0 solid #fff;
+  border-width: 180px 240px 0 20px;
+  transform-origin: left bottom;
 }
 
 #jumbotron-laptop .jumbotron-text {
@@ -162,13 +235,22 @@ strong {
   left: calc(100% - 240px - 1vw - 12px);
 }
 
+@media (max-width: 1068px) {
+  .jumbotron-tagline {
+    font-size: 59px;
+    line-height: 1.10227;
+    font-weight: 500;
+  }
+}
+
 @media (max-width: 700px) {
   #jumbotron-laptop-image {
     border-width: 0 0 0 180px;
-    transform: rotate(90deg);
+    transform: rotate(90deg) translate3d(-100%, -40px, 0);
+    width: auto;
     height: calc(100vw - 80px);
     position: relative;
-    bottom: 120px;
+    bottom: calc(100px - 8vw);
   }
 }
 

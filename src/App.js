@@ -14,7 +14,8 @@ export default class Root extends Component {
 
     this.isMobile = !!navigator.userAgent.match(/Android|iPhone|Windows Phone|iPod|BlackBerry/i);
 
-    window.addEventListener("resize", this.onResize.bind(this), false);
+    window.addEventListener('resize', this.onResize.bind(this), false);
+    window.addEventListener('mousemove', this.onResize.bind(this, 1000), false);
   }
 
   componentDidMount () {
@@ -25,11 +26,11 @@ export default class Root extends Component {
     this.resizeInterval = setInterval(this.onResize.bind(this), 500);
   }
 
-  componentDidUnmount () {
+  componentWillUnmount () {
     clearInterval(this.resizeInterval);
   }
 
-  onResize () {
+  onResize (debounce = 66) {
     if (!this.resizeTimeout) {
       this.resizeTimeout = setTimeout(() => {
         this.resizeTimeout = null;
@@ -37,7 +38,7 @@ export default class Root extends Component {
           screenWidth: window.document.documentElement.clientWidth,
           headerHeight: document.querySelector('.Header').offsetHeight
         })
-       }, 66);
+       }, debounce);
     }
   }
 
