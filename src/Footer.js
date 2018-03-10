@@ -6,7 +6,7 @@ export default () => {
     <footer className='Footer'>
       <div className='App-row-sizer App-row-description'>
         <small>
-          &copy; <Strong>TomGolden</Strong>. No rights reserved. Disclaimer - I am not a trademark.
+          &copy; <Strong>TomGolden</Strong>. Not actually a trademark.
         </small>
       </div>
     </footer>

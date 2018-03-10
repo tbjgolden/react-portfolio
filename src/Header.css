@@ -1,20 +1,119 @@
 .Header {
   position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
   z-index: 1;
+  height: var(--header-height);
+  line-height: var(--header-height);
+  padding: 0 16px;
+  width: 100%;
+  background: #333;
+  background: rgba(0,0,0,0.8);
+  font-size: 17px;
+  user-select: none;
+  backdrop-filter: saturate(180%) blur(20px);
+  color: #fff;
 }
 
-.Header::before {
-  content: '';
-  z-index: -1;
+.Header + .Main {
+  padding-top: var(--header-height);
+}
+
+.Header-logo {
+  display: inline-block;
+  border-radius: 9999px;
+  background-color: #fff;
+  height: 17px;
+  width: 17px;
+  margin: 0 16px;
+  position: relative;
+  top: 2px;
+  transition: background-color .2s ease-in-out;
+  cursor: pointer;
+}
+
+.Header-logo:hover {
+  background-color: #b4b4b4;
+}
+
+.Header-menu-button {
+  display: none;
   position: absolute;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  bottom: 0;
+  width: var(--header-height);
+  cursor: pointer;
+}
+
+.Header-menu-button::before,
+.Header-menu-button::after {
+  content: '';
+  position: absolute;
+  width: 17px;
+  height: 1px;
   background-color: #fff;
-  background-image: url("data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' width='4' height='4' viewBox='0 0 4 4'><path fill='#ccc' fill-opacity='1' d='M1 3h1v1H1V3zm2-2h1v1H3V1z'></path></svg>");
-  opacity: 0.9;
+  transition: background-color .2s ease-in-out;
+  left: 50%;
+  transform: translate3d(-50%, 0, 0) translateX(0.5px);
+}
+
+.Header-menu-button::before {
+  top: calc(16px + 4px);
+}
+
+.Header-menu-button::after {
+  bottom: calc(16px + 4px);
+}
+
+.Header-menu-button:hover::before,
+.Header-menu-button:hover::after {
+  background-color: #b4b4b4;
+}
+
+.Header-cart-button {
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: var(--header-height);
+  cursor: pointer;
+}
+
+.Header-cart-button::before,
+.Header-cart-button::after {
+  content: '';
+  position: absolute;
+  border: 1px solid #fff;
+  transition: border-color .2s ease-in-out;
+  top: 50%;
+  left: 50%;
+  transform: translate3d(-50%, -50%, 0) translate(1px, .5px);
+}
+
+.Header-cart-button::before {
+  width: 6px;
+  height: 2px;
+  border-radius: 9999px 9999px 0 0;
+  border-width: 1px 1px 0;
+  top: calc(50% - 10px);
+}
+
+.Header-cart-button::after {
+  width: 15px;
+  height: 15px;
+  border-radius: 2px;
+}
+
+.Header-cart-button:hover::before,
+.Header-cart-button:hover::after {
+  border-color: #b4b4b4;
+}
+
+@media (max-width: 767px) {
+  .Header {
+    text-align: center;
+  }
+
+  .Header-menu-button {
+    display: inline-block;
+  }
 }

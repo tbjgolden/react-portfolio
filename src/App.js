@@ -47,7 +47,7 @@ export default class Root extends Component {
     const { headerHeight, screenWidth } = state;
 
     return (
-      <div className='App-wrapper'>
+      <div className='App'>
         <Header screenWidth={screenWidth} />
         <Main headerHeight={headerHeight} screenWidth={screenWidth} isMobile={isMobile} />
         <Footer />

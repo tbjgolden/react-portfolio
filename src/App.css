@@ -1,17 +1,157 @@
-.App-wrapper {
-  display: flex;
-  flex-direction: column;
-  min-height: 100vh;
-}
-
 .App-row {
-  background: linear-gradient(to bottom, rgba(0,0,0,0) 0%,rgba(0,0,0,0.025) 100%);
   padding: 40px 0;
   position: relative;
+}
+
+.App-row.white {
+  background: linear-gradient(to bottom, #fff 0%, #f7f7f7 100%);
+}
+
+.App-row.has-notch {
+  text-align: center;
+  padding: 0;
+  border-radius: 10vw 10vw 0 0;
+  border: 1vw solid #000;
+  border-bottom: 0;
+  overflow-x: hidden;
+  box-shadow: -1px 1px 0 #000 inset, 1px 1px 0 #000 inset;
+  margin: 0 20px;
+}
+
+.App-row.has-notch::after {
+  content: '';
+  position: absolute;
+  z-index: -2;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, #fff 0%, #000 100%);
 }
 
 .App-row-sizer {
   max-width: var(--row-container-max-width);
   margin: 0 auto;
-  padding: 40px;
+  padding: 40px 60px;
+}
+
+.App-row-title {
+  font-size: 48px;
+  line-height: 1.08365;
+  font-weight: 600;
+  letter-spacing: -.003em;
+  text-align: center;
+}
+
+.App-row-description,
+.App-row-header {
+  font-size: 21px;
+  line-height: 1.38105;
+  letter-spacing: .011em;
+  text-align: center;
+}
+
+.App-row-description {
+  color: #333;
+  font-weight: 400;
+}
+
+.App-row-header {
+  font-weight: 500;
+}
+
+.App-row-description:not(:last-child) {
+  margin-bottom: 1.6ex;
+}
+
+.App-row-header:not(:last-child) {
+  margin-bottom: 1.3ex;
+}
+
+.App-notch {
+  display: inline-block;
+  padding: .6vw calc(2vw + 20px) 1.4vw;
+  position: relative;
+  background-color: #000;
+  border-radius: 0 0 48px 48px;
+  min-width: 52vw;
+  max-width: calc(100vw - 128px);
+}
+
+.App-notch > * {
+  filter: invert(1);
+}
+
+.App-row-title + .App-row-description,
+.App-row-header + .App-row-description {
+  padding-top: 1ex;
+}
+
+.App-notch > .App-row-description {
+  padding-top: .2ex;
+}
+
+@media (max-width: 1068px) {
+  .App-row-title {
+    font-size: 27px;
+    line-height: 1.2963;
+    letter-spacing: .008em;
+  }
+
+  .App-row-description,
+  .App-row-header {
+    font-size: 19px;
+    line-height: 1.42115;
+    letter-spacing: .012em;
+  }
+
+  .jumbotron-tagline {
+    font-size: 59px;
+    line-height: 1.10227;
+    font-weight: 500;
+    letter-spacing: -.025em;
+  }
+}
+
+@media (max-width: 735px) {
+  .App-row-title {
+    font-size: 24px;
+    line-height: 1.33349;
+    letter-spacing: .009em;
+    text-align: left;
+  }
+
+  .App-row-description,
+  .App-row-header {
+    font-size: 18px;
+    line-height: 1.4446;
+    letter-spacing: .016em;
+    text-align: left;
+  }
+}
+
+@media (max-width: 735px) {
+  .App-row-title {
+    font-size: 24px;
+    line-height: 1.33349;
+    letter-spacing: .009em;
+    text-align: left;
+  }
+
+  .App-row-description,
+  .App-row-header {
+    font-size: 18px;
+    line-height: 1.4446;
+    letter-spacing: .016em;
+    text-align: left;
+  }
+
+  .App-notch .App-row-title {
+    font-size: 5vw;
+    letter-spacing: .006em;
+  }
+
+  .App-notch .App-row-description {
+    display: none;
+  }
 }

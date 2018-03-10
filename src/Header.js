@@ -1,19 +1,24 @@
-import React from 'react';
+import React, { Component } from 'react';
 import './Header.css';
 
-export default ({ screenWidth }) => {
-  return (
-    <header className='Header'>
-      <div className='App-row-sizer'>
-        <h1>
-          TomGolden<span style={{verticalAlign: 'super', fontSize: '50%' }}>TM</span>
-        </h1>
-        {
-          screenWidth >= 992
-            ? <h2>The best TomGolden we've ever produced.</h2>
-            : null
-        }
-      </div>
-    </header>
-  );
+export default class Header extends Component {
+  top = { scrollIntoView: () => {} };
+  scrollToTop = () => this.top.scrollIntoView({ behavior: 'smooth' });
+
+  componentDidMount () {
+    this.top = document.getElementById('top');
+  }
+
+  render () {
+    return (
+      <header className='Header'>
+        <div className='App-row-sizer' style={{ padding: 0, position: 'relative' }}>
+          {/* <div className='Header-title'> */}
+          <div role='button' tabIndex='0' className='Header-menu-button' />
+          <div className='Header-logo' onClick={this.scrollToTop} />
+          <div role='button' tabIndex='0' className='Header-cart-button' />
+        </div>
+      </header>
+    );
+  }
 }
