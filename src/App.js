@@ -12,7 +12,7 @@ export default class Root extends Component {
       headerHeight: 0
     };
 
-    this.isMobile = !!navigator.userAgent.match(/Android|iPhone|Windows Phone|iPod|BlackBerry/i);
+    this.isIOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
 
     window.addEventListener('resize', this.onResize.bind(this), false);
     window.addEventListener('mousemove', this.onResize.bind(this, 1000), false);
@@ -43,13 +43,13 @@ export default class Root extends Component {
   }
 
   render () {
-    const { state, isMobile } = this;
-    const { headerHeight, screenWidth } = state;
+    const { state, isIOS } = this;
+    const { screenWidth } = state;
 
     return (
       <div className='App'>
         <Header screenWidth={screenWidth} />
-        <Main headerHeight={headerHeight} screenWidth={screenWidth} isMobile={isMobile} />
+        <Main screenWidth={screenWidth} isIOS={isIOS} />
         <Footer />
       </div>
     );

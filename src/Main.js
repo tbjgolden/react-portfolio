@@ -7,7 +7,7 @@ import MobileDiagram from './MobileDiagram';
 import Matrix from './Matrix';
 import './Main.css';
 
-export default ({ headerHeight, screenWidth, isMobile }) => (
+export default ({ screenWidth, isIOS }) => (
   <main className='Main'>
     <div id='top' />
     <Jumbotron>
@@ -28,7 +28,7 @@ export default ({ headerHeight, screenWidth, isMobile }) => (
       </div>
     </div>
     <hr className='x6' />
-    <div className='App-row has-notch' style={{ height: 'calc(200px + 10vw)' }}>
+    <div className={`App-row has-notch ${isIOS ? 'iOS' : ''}`} style={{ height: 'calc(200px + 10vw)' }}>
       <Matrix screenWidth={screenWidth} />
       <div className='App-notch centre'>
         <div className='App-row-title'>TomGolden writes code.</div>

@@ -18,6 +18,13 @@
   margin: 0 20px;
 }
 
+.App-row.has-notch.iOS {
+  border: 0;
+  border-radius: 0;
+  margin: 0;
+  box-shadow: none;
+}
+
 .App-row.has-notch::after {
   content: '';
   position: absolute;
@@ -76,6 +83,10 @@
   border-radius: 0 0 48px 48px;
   min-width: 52vw;
   max-width: calc(100vw - 128px);
+}
+
+.App-row.has-notch.iOS > .App-notch {
+  min-width: 0;
 }
 
 .App-notch > * {
