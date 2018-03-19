@@ -1,26 +1,16 @@
 import React from 'react';
 import Columns from './Columns';
-import Jumbotron from './Jumbotron';
 import Strong from './Strong';
 import WebDiagram from './WebDiagram';
 import MobileDiagram from './MobileDiagram';
 import Matrix from './Matrix';
+import HomeJumbotron from './HomeJumbotron';
 import './Main.css';
 
 export default ({ screenWidth, isIOS }) => (
   <main className='Main'>
     <div id='top' />
-    <Jumbotron>
-      <div className='App-row-sizer centre'>
-        <div className='App-row-title'>
-          Incredible engineering.
-        </div>
-        <div className='App-row-description' id='design-film-link'>
-          <a href='film.html' target='_blank'>Watch the design film</a>
-        </div>
-      </div>
-      <img id='jumbotron-laptop-image' alt='My laptop' src='images/mylaptop.jpg' />
-    </Jumbotron>
+    <HomeJumbotron />
     <div className='App-row-sizer'>
       <div className='App-row-title centre'>The best TomGolden yet.</div>
       <div className='App-row-description centre'>

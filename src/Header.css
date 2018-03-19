@@ -13,6 +13,11 @@
   color: #fff;
 }
 
+.Header > .App-row-sizer {
+  padding: 0;
+  position: relative;
+}
+
 .Header + .Main {
   padding-top: var(--header-height);
 }

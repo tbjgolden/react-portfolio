@@ -32,11 +32,6 @@
   background-size: cover;
 }
 
-#jumbotron-laptop-image {
-  width: 100%;
-  height: auto;
-}
-
 @media (max-width: 1068px) {
   .Jumbotron .App-row-title {
     font-size: 59px;
