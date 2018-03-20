@@ -7,7 +7,7 @@ import Matrix from './Matrix';
 import HomeJumbotron from './HomeJumbotron';
 import './Main.css';
 
-export default ({ screenWidth, isIOS }) => (
+export default ({ screenWidth }) => (
   <main className='Main'>
     <div id='top' />
     <HomeJumbotron />
@@ -17,10 +17,10 @@ export default ({ screenWidth, isIOS }) => (
         The new <Strong>TomGolden</Strong> comes with a new 15 inch MacBook Pro as standard.
       </div>
     </div>
-    <hr className='x6' />
-    <div className={`App-row has-notch ${isIOS ? 'iOS' : ''}`} style={{ height: 'calc(200px + 10vw)' }}>
+    <hr className='x4' />
+    <div className='App-row' style={{ height: 'calc(300px + 15vw)' }}>
       <Matrix screenWidth={screenWidth} />
-      <div className='App-notch centre'>
+      <div className='App-row-sizer'>
         <div className='App-row-title'>TomGolden writes code.</div>
         <div className='App-row-description'>
           <Strong>Smart, efficient, truly profound algorithms.</Strong>
