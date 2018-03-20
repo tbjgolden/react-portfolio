@@ -4,54 +4,52 @@ import './Header.css';
 export default class Header extends Component {
   state = { menuOpen: false };
 
-  menuItems = [
+  menu = (items =>
+    items.map(({ url, title }) => (
+      <li key={url} className='Header-menu-nav-list-item'>
+        <a href={url} className='Header-menu-nav-list-item-link'>{title}</a>
+      </li>
+    ))
+  )([
     { title: 'Lolz', url: 'lolz' },
     { title: 'Molz', url: 'molz' },
     { title: 'Holz', url: 'holz' },
     { title: 'Rolz', url: 'rolz' }
-  ];
+  ]);
 
-  componentDidMount = () => { this.top = document.getElementById('top') };
+  componentDidMount = () => {
+    this.top = document.getElementById('top');
+  };
+
+  mousewheelEvent = e => !!e.preventDefault();
 
   scrollToTop = () => this.top.scrollIntoView({ behavior: 'smooth' });
   state = { menuOpen: false };
 
-  toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
-
   toggleMenu = () => {
-    this.setState({
-      menuOpen: this.state.menuOpen
-    });
-  }
+    const menuOpen = !this.state.menuOpen;
+
+    document.body.style.overflowY = menuOpen ? 'hidden' : 'auto';
+    document.body.style.pointerEvents = menuOpen ? 'none' : 'auto';
+
+    this.setState({ menuOpen });
+  };
 
   render () {
-    const { menuItems, state } = this;
+    const { menu, state } = this;
     const { menuOpen } = state;
-
-    const menu = (
-      <nav className='Header-menu-nav'>
-        <ul className='Header-menu-nav-list'>
-          {
-            menuItems.map(({ url, title }) => (
-              <li key={url} className='Header-menu-nav-list-item'>
-                <a href={url} className='Header-menu-nav-list-item-link'>{title}</a>
-              </li>
-            ))
-          }
-        </ul>
-      </nav>
-    );
 
     return (
       <header className={`Header ${(menuOpen ? 'is-open' : '')}`}>
         <div className='App-row-sizer' style={{ padding: 0, position: 'relative' }}>
           <div className='Header-menu-button' onClick={this.toggleMenu} role='button' tabIndex='0' />
           <div className='Header-logo' onClick={this.scrollToTop} role='button' tabIndex='0' />
-          { menu }
+          <nav className='Header-menu-nav'>
+            <ul className='Header-menu-nav-list'>
+              { menu }
+            </ul>
+          </nav>
           <div className='Header-cart-button' role='button' tabIndex='0' />
-        </div>
-        <div className='Header-mobile-menu' style={{ display: menuOpen ? 'block' : 'none' }}>
-          <p>Hi</p>
         </div>
       </header>
     );

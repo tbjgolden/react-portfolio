@@ -23,7 +23,7 @@ export default ({ screenWidth }) => (
       <div className='App-row-sizer'>
         <div className='App-row-title'>TomGolden writes code.</div>
         <div className='App-row-description'>
-          <Strong>Smart, efficient, truly profound algorithms.</Strong>
+          <Strong>Proprietary, revolutionary algorithms.</Strong>
         </div>
       </div>
     </div>
