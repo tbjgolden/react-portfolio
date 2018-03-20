@@ -40,6 +40,9 @@ export default class Header extends Component {
     const { menu, state } = this;
     const { menuOpen } = state;
 
+    const cartButtonProps = { 'aria-hidden': menuOpen };
+    if (!menuOpen) cartButtonProps.tabIndex = '0';
+
     return (
       <header className={`Header ${(menuOpen ? 'is-open' : '')}`}>
         <div className='App-row-sizer' style={{ padding: 0, position: 'relative' }}>
@@ -50,7 +53,7 @@ export default class Header extends Component {
               { menu }
             </ul>
           </nav>
-          <div className='Header-cart-button' role='button' tabIndex='0' />
+          <div className='Header-cart-button' role='button' {...cartButtonProps} />
         </div>
       </header>
     );

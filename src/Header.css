@@ -103,6 +103,7 @@
   bottom: 0;
   width: var(--header-height);
   cursor: pointer;
+  transition: right .3s ease-out;
 }
 
 .Header-cart-button::before,
@@ -195,16 +196,31 @@
   .Header-menu-nav-list {
     display: block;
     padding: 20px 48px;
+    opacity: 0;
   }
 
   .Header-menu-nav-list-item {
     display: block;
     text-align: left;
-    border-bottom: 1px solid #333;
+    border-bottom: 1px solid transparent;
   }
 
   .Header-menu-nav-list-item-link {
     display: block;
+    font-size: 17px;
+    letter-spacing: -.021em;
+  }
+
+  .Header.is-open .Header-cart-button {
+    right: -64px;
+  }
+
+  .Header.is-open .Header-menu-nav-list {
+    opacity: 1;
+  }
+
+  .Header.is-open .Header-menu-nav-list-item {
+    border-bottom-color: #333;
   }
 
   .Header.is-open .Header-menu-button::before {

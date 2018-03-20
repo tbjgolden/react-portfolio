@@ -1,0 +1,9 @@
+.Footer .App-row-description {
+  line-height: 1.2;
+}
+
+@media (max-width: 767px) {
+  .Footer > .App-row-sizer {
+    padding: calc(12px + 5vw);
+  }
+}

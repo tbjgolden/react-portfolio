@@ -7,7 +7,7 @@ export default ({ isAndroid }) => {
     <footer className='Footer'>
       <div className='App-row-sizer App-row-description'>
         <small>
-          &copy; <Strong>TomGolden</Strong>. Not actually a trademark.
+          &copy; <Strong>TomGolden</Strong>. (Disclaimer) TomGolden&nbsp;is&nbsp;probably&nbsp;not a trademark.
         </small>
       </div>
     </footer>
