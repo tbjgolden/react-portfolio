@@ -14,8 +14,15 @@ export default class Header extends Component {
   componentDidMount = () => { this.top = document.getElementById('top') };
 
   scrollToTop = () => this.top.scrollIntoView({ behavior: 'smooth' });
+  state = { menuOpen: false };
 
   toggleMenu = () => this.setState({ menuOpen: !this.state.menuOpen });
+
+  toggleMenu = () => {
+    this.setState({
+      menuOpen: this.state.menuOpen
+    });
+  }
 
   render () {
     const { menuItems, state } = this;
@@ -42,6 +49,9 @@ export default class Header extends Component {
           <div className='Header-logo' onClick={this.scrollToTop} role='button' tabIndex='0' />
           { menu }
           <div className='Header-cart-button' role='button' tabIndex='0' />
+        </div>
+        <div className='Header-mobile-menu' style={{ display: menuOpen ? 'block' : 'none' }}>
+          <p>Hi</p>
         </div>
       </header>
     );

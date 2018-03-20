@@ -1,36 +1,26 @@
 import React from 'react';
 import Columns from './Columns';
-import Jumbotron from './Jumbotron';
 import Strong from './Strong';
 import WebDiagram from './WebDiagram';
 import MobileDiagram from './MobileDiagram';
 import Matrix from './Matrix';
+import HomeJumbotron from './HomeJumbotron';
 import './Main.css';
 
-export default ({ screenWidth, isIOS }) => (
+export default ({ screenWidth }) => (
   <main className='Main'>
     <div id='top' />
-    <Jumbotron>
-      <div className='App-row-sizer centre'>
-        <div className='App-row-title'>
-          Incredible engineering.
-        </div>
-        <div className='App-row-description' id='design-film-link'>
-          <a href='film.html' target='_blank'>Watch the design film</a>
-        </div>
-      </div>
-      <img id='jumbotron-laptop-image' alt='My laptop' src='images/mylaptop.jpg' />
-    </Jumbotron>
+    <HomeJumbotron />
     <div className='App-row-sizer'>
       <div className='App-row-title centre'>The best TomGolden yet.</div>
       <div className='App-row-description centre'>
         The new <Strong>TomGolden</Strong> comes with a new 15 inch MacBook Pro as standard.
       </div>
     </div>
-    <hr className='x6' />
-    <div className={`App-row has-notch ${isIOS ? 'iOS' : ''}`} style={{ height: 'calc(200px + 10vw)' }}>
+    <hr className='x4' />
+    <div className='App-row' style={{ height: 'calc(300px + 15vw)' }}>
       <Matrix screenWidth={screenWidth} />
-      <div className='App-notch centre'>
+      <div className='App-row-sizer'>
         <div className='App-row-title'>TomGolden writes code.</div>
         <div className='App-row-description'>
           <Strong>Smart, efficient, truly profound algorithms.</Strong>

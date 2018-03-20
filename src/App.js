@@ -7,22 +7,13 @@ import './App.css';
 export default class Root extends Component {
   constructor (props) {
     super(props);
-    this.state = {
-      screenWidth: window.document.documentElement.clientWidth,
-      headerHeight: 0
-    };
-
-    this.isIOS = !!navigator.platform && /iPad|iPhone|iPod/.test(navigator.platform);
+    this.state = { screenWidth: window.document.documentElement.clientWidth };
 
     window.addEventListener('resize', this.onResize.bind(this), false);
     window.addEventListener('mousemove', this.onResize.bind(this, 1000), false);
   }
 
   componentDidMount () {
-    this.setState({
-      headerHeight: document.querySelector('.Header').offsetHeight
-    });
-
     this.resizeInterval = setInterval(this.onResize.bind(this), 500);
   }
 
@@ -35,21 +26,20 @@ export default class Root extends Component {
       this.resizeTimeout = setTimeout(() => {
         this.resizeTimeout = null;
         this.setState({
-          screenWidth: window.document.documentElement.clientWidth,
-          headerHeight: document.querySelector('.Header').offsetHeight
+          screenWidth: window.document.documentElement.clientWidth
         })
        }, debounce);
     }
   }
 
   render () {
-    const { state, isIOS } = this;
+    const { state } = this;
     const { screenWidth } = state;
 
     return (
       <div className='App'>
         <Header screenWidth={screenWidth} />
-        <Main screenWidth={screenWidth} isIOS={isIOS} />
+        <Main screenWidth={screenWidth} />
         <Footer />
       </div>
     );

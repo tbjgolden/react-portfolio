@@ -1,7 +1,8 @@
 import React from 'react';
 import Strong from './Strong';
+import './Footer.css';
 
-export default () => {
+export default ({ isAndroid }) => {
   return (
     <footer className='Footer'>
       <div className='App-row-sizer App-row-description'>

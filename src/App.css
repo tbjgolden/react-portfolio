@@ -7,35 +7,6 @@
   background: linear-gradient(to bottom, #fff 0%, #f7f7f7 100%);
 }
 
-.App-row.has-notch {
-  text-align: center;
-  padding: 0;
-  border-radius: 10vw 10vw 0 0;
-  border: 1vw solid #000;
-  border-bottom: 0;
-  overflow-x: hidden;
-  box-shadow: -1px 1px 0 #000 inset, 1px 1px 0 #000 inset;
-  margin: 0 20px;
-}
-
-.App-row.has-notch.iOS {
-  border: 0;
-  border-radius: 0;
-  margin: 0;
-  box-shadow: none;
-}
-
-.App-row.has-notch::after {
-  content: '';
-  position: absolute;
-  z-index: -2;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(to bottom, #fff 0%, #000 100%);
-}
-
 .App-row-sizer {
   max-width: var(--row-container-max-width);
   margin: 0 auto;
@@ -73,24 +44,6 @@
 
 .App-row-header:not(:last-child) {
   margin-bottom: 1.3ex;
-}
-
-.App-notch {
-  display: inline-block;
-  padding: .6vw calc(2vw + 20px) 1.4vw;
-  position: relative;
-  background-color: #000;
-  border-radius: 0 0 48px 48px;
-  min-width: 52vw;
-  max-width: calc(100vw - 128px);
-}
-
-.App-row.has-notch.iOS > .App-notch {
-  min-width: 0;
-}
-
-.App-notch > * {
-  filter: invert(1);
 }
 
 .App-row-title + .App-row-description,

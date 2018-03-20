@@ -87,20 +87,19 @@ function findSurrogatePair (point) {
   return [lead.toString(16), trail.toString(16)];
 }
 
+const emojis = [
+  '1F601', '1F602', '1F603', '1F604', '1F605', '1F609', '1F60A', '1F60B',
+  '1F60C', '1F60D', '1F612', '1F613', '1F614', '1F616', '1F618', '1F61A',
+  '1F61C', '1F61D', '1F61E', '1F620', '1F622', '1F623', '1F624', '1F625',
+  '1F628', '1F629', '1F62A', '1F62B', '1F62D', '1F630', '1F631', '1F632',
+  '1F633', '1F635', '1F637', '1F600', '1F607', '1F60E', '1F610', '1F611',
+  '1F617', '1F619', '1F61B', '1F61F', '1F626', '1F627', '1F62C', '1F62E',
+  '1F62F', '1F634', '1F636'
+]
+  .map(charCode => String.fromCharCode(
+    ...findSurrogatePair(parseInt(charCode, 16)).map(code => parseInt(code, 16))
+  ));
+
 function randomEmoji () {
-  const emojis = [
-    '1F601', '1F602', '1F603', '1F604', '1F605', '1F609', '1F60A', '1F60B',
-    '1F60C', '1F60D', '1F612', '1F613', '1F614', '1F616', '1F618', '1F61A',
-    '1F61C', '1F61D', '1F61E', '1F620', '1F622', '1F623', '1F624', '1F625',
-    '1F628', '1F629', '1F62A', '1F62B', '1F62D', '1F630', '1F631', '1F632',
-    '1F633', '1F635', '1F637', '1F600', '1F607', '1F60E', '1F610', '1F611',
-    '1F617', '1F619', '1F61B', '1F61F', '1F626', '1F627', '1F62C', '1F62E',
-    '1F62F', '1F634', '1F636'
-  ];
-
-  const random = emojis[~~(emojis.length * Math.random())];
-
-  return String.fromCharCode(
-    ...findSurrogatePair(parseInt(random, 16)).map(code => parseInt(code, 16))
-  );
+  return emojis[~~(emojis.length * Math.random())];
 }
