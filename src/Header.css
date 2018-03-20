@@ -99,7 +99,7 @@
 .Header-cart-button {
   position: absolute;
   top: 0;
-  right: 0;
+  right: 16px;
   bottom: 0;
   width: var(--header-height);
   cursor: pointer;
@@ -191,6 +191,10 @@
     left: -16px;
     right: -16px;
     transition: max-height .3s ease-in-out, opacity .3s ease-in-out;
+  }
+
+  .Header-cart-button {
+    right: 0;
   }
 
   .Header-menu-nav-list {
