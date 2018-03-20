@@ -11,10 +11,11 @@ export default class Header extends Component {
       </li>
     ))
   )([
-    { title: 'Lolz', url: 'lolz' },
-    { title: 'Molz', url: 'molz' },
-    { title: 'Holz', url: 'holz' },
-    { title: 'Rolz', url: 'rolz' }
+    { title: 'Portfolio', url: 'portfolio' },
+    { title: 'Experience', url: 'experience' },
+    { title: 'Education', url: 'education' },
+    { title: 'AboutThisSite', url: 'about-this-site' },
+    { title: 'Blog', url: 'blog' }
   ]);
 
   componentDidMount = () => {
