@@ -1,19 +1,24 @@
 .Columns {
   display: flex;
-  flex-wrap: wrap;
+
   padding: 20px 0;
+
+  flex-wrap: wrap;
 }
 
 .Columns-column {
-  flex: 1 0 auto;
-  padding: 20px 12px;
   max-width: 100%;
+  padding: 20px 12px;
+
   text-align: center;
+
+  flex: 1 0 auto;
 }
 
 @media (max-width: 735px) {
   .Columns-column {
-    text-align: left;
     padding: 20px 24px 20px 0;
+
+    text-align: left;
   }
 }

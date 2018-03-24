@@ -1,31 +1,40 @@
 .Header {
-  position: fixed;
-  pointer-events: auto;
-  z-index: 1;
-  height: var(--header-height);
-  line-height: var(--header-height);
-  padding: 0 16px;
-  width: 100%;
   font-size: 17px;
+  line-height: var(--header-height);
+
+  position: fixed;
+  z-index: 1;
+
+  width: 100%;
+  height: var(--header-height);
+  padding: 0 16px;
+
   user-select: none;
+  pointer-events: auto;
+
   color: #fff;
 }
 
 .Header::after {
-  content: '';
   position: absolute;
   z-index: -9999;
   top: 0;
   left: 0;
+
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+
+  content: '';
+
+  background: rgba(0,0,0,.8);
+
   backdrop-filter: saturate(180%) blur(20px);
 }
 
 .Header > .App-row-sizer {
-  padding: 0;
   position: relative;
+
+  padding: 0;
 }
 
 .Header + .Main {
@@ -44,17 +53,21 @@
 }
 
 .Header-logo::after {
-  content: '';
-  display: inline-block;
-  border-radius: 9999px;
-  background-color: #fff;
-  height: 17px;
-  width: 17px;
-  margin: 0 16px;
   position: relative;
   top: 2px;
-  transition: background-color .2s ease-in-out;
+
+  display: inline-block;
+
+  width: 17px;
+  height: 17px;
+  margin: 0 16px;
+
+  content: '';
   cursor: pointer;
+  transition: background-color .2s ease-in-out;
+
+  border-radius: 9999px;
+  background-color: #fff;
 }
 
 .Header-logo:hover::after {
@@ -62,25 +75,31 @@
 }
 
 .Header-menu-button {
-  display: none;
   position: absolute;
   top: 0;
-  left: 0;
   bottom: 0;
+  left: 0;
+
+  display: none;
+
   width: var(--header-height);
+
   cursor: pointer;
 }
 
 .Header-menu-button::before,
 .Header-menu-button::after {
-  content: '';
   position: absolute;
+  left: 50%;
+
   width: 17px;
   height: 1px;
-  background-color: #fff;
+
+  content: '';
   transition: background-color .2s ease-in-out, transform .2s ease-in-out;
-  left: 50%;
-  transform: translate3d(-50%, 0, 0) translateX(0.5px);
+  transform: translate3d(-50%, 0, 0) translateX(.5px);
+
+  background-color: #fff;
 }
 
 .Header-menu-button::before {
@@ -101,34 +120,41 @@
   top: 0;
   right: 16px;
   bottom: 0;
+
   width: var(--header-height);
+
   cursor: pointer;
   transition: right .3s ease-out;
 }
 
 .Header-cart-button::before,
 .Header-cart-button::after {
-  content: '';
   position: absolute;
-  border: 1px solid #fff;
-  transition: border-color .2s ease-in-out;
   top: 50%;
   left: 50%;
-  transform-origin: top left;
+
+  content: '';
+  transition: border-color .2s ease-in-out;
   transform: translate3d(-50%, -50%, 0) translate(1px, .5px);
+  transform-origin: top left;
+
+  border: 1px solid #fff;
 }
 
 .Header-cart-button::before {
+  top: calc(50% - 10px);
+
   width: 6px;
   height: 2px;
-  border-radius: 9999px 9999px 0 0;
+
   border-width: 1px 1px 0;
-  top: calc(50% - 10px);
+  border-radius: 9999px 9999px 0 0;
 }
 
 .Header-cart-button::after {
   width: 15px;
   height: 15px;
+
   border-radius: 2px;
 }
 
@@ -140,36 +166,43 @@
 .Header-menu-nav {
   position: absolute;
   top: 0;
-  left: 80px;
   right: 80px;
+  left: 80px;
+
   height: 100%;
 }
 
 .Header-menu-nav-list {
+  display: flex;
+
   margin: 0;
   padding: 0;
-  display: flex;
 }
 
 .Header-menu-nav-list-item {
-  flex: 1 0 auto;
   display: inline-block;
+
   text-align: center;
+
+  flex: 1 0 auto;
 }
 
 .Header-menu-nav-list-item-link {
   font-size: 17px;
-  line-height: 2.52947;
-  letter-spacing: -.021em;
   font-weight: 400;
-  text-decoration: none;
-  color: #fff;
+  line-height: 2.52947;
+
   transition: color .2s ease-in-out;
+  text-decoration: none;
+  letter-spacing: -.021em;
+
+  color: #fff;
 }
 
 .Header-menu-nav-list-item-link:hover {
-  color: #b4b4b4;
   text-decoration: none;
+
+  color: #b4b4b4;
 }
 
 @media (max-width: 767px) {
@@ -182,15 +215,19 @@
   }
 
   .Header-menu-nav {
-    opacity: 0;
-    pointer-events: none;
-    padding-top: 48px;
+    right: -16px;
+    left: -16px;
+
+    overflow-y: hidden;
+
     height: 100vh;
     max-height: 0;
-    overflow-y: hidden;
-    left: -16px;
-    right: -16px;
+    padding-top: 48px;
+
     transition: max-height .3s ease-in-out, opacity .3s ease-in-out;
+    pointer-events: none;
+
+    opacity: 0;
   }
 
   .Header-cart-button {
@@ -199,19 +236,25 @@
 
   .Header-menu-nav-list {
     display: block;
+
     padding: 20px 48px;
+
     opacity: 0;
   }
 
   .Header-menu-nav-list-item {
     display: block;
+
     text-align: left;
+
     border-bottom: 1px solid transparent;
   }
 
   .Header-menu-nav-list-item-link {
-    display: block;
     font-size: 17px;
+
+    display: block;
+
     letter-spacing: -.021em;
   }
 
@@ -236,9 +279,11 @@
   }
 
   .Header.is-open .Header-menu-nav {
-    opacity: 1;
-    pointer-events: auto;
     max-height: 100vh;
+
+    pointer-events: auto;
+
+    opacity: 1;
     background-color: #000;
   }
 }

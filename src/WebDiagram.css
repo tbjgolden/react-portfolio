@@ -1,43 +1,53 @@
 .WebDiagram {
   display: inline-block;
+
   width: 300px;
   max-width: 100%;
 }
 
 .WebDiagram-screen-container {
   position: relative;
+
   padding: 62.5% 0 0;
-  box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+
+  box-shadow: 0 3px 6px rgba(0,0,0,.16), 0 3px 6px rgba(0,0,0,.23);
 }
 
 .WebDiagram-screen {
   position: absolute;
   top: 0;
   left: 0;
+
+  overflow: hidden;
+
   width: 100%;
   height: 100%;
-  overflow: hidden;
+
   background-color: #fff;
 }
 
 .WebDiagram-sidebar {
   position: absolute;
+  z-index: 1;
   top: 0;
   left: 0;
+
   width: 25%;
   height: 100%;
   padding: 2%;
-  z-index: 1;
-  box-shadow: 0 .5px 3px rgba(0,0,0,0.12), 0 .5px 2px rgba(0,0,0,0.24);
+
   background-color: #eee;
+  box-shadow: 0 .5px 3px rgba(0,0,0,.12), 0 .5px 2px rgba(0,0,0,.24);
 }
 
 .WebDiagram-sidebar-header {
   position: absolute;
   top: 4%;
   left: 8%;
+
   width: 84%;
   height: 8%;
+
   background-color: #555;
 }
 
@@ -45,28 +55,33 @@
   position: absolute;
   top: 0;
   left: 25%;
+
+  overflow: hidden;
+
   width: 75%;
   height: 100%;
   padding: 2%;
-  overflow: hidden;
 }
 
 .WebDiagram-body-header {
   position: absolute;
   top: 4%;
   left: 3%;
+
   width: 94%;
   max-width: 120px;
   height: 8%;
+
   background-color: #555;
 }
 
 .WebDiagram-body-paragraph {
   position: absolute;
   left: 3%;
+
   width: 94%;
-  height: 18%;
   max-width: 180px;
+  height: 18%;
 }
 
 .WebDiagram-body-paragraph:nth-child(2) {
@@ -84,8 +99,10 @@
 .WebDiagram-body-paragraph-line {
   position: absolute;
   left: 0;
+
   width: 100%;
   height: 24%;
+
   background-color: #888;
 }
 

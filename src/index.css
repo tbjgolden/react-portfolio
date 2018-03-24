@@ -5,21 +5,24 @@
 }
 
 body {
+  font-family: 'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
+  'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+  font-size: 19px;
+  font-weight: 300;
+  line-height: 1.47384;
+
   margin: 0;
   padding: 0;
-  font-family:
-    'SF Pro Display', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif,
-    'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
-  background-color: #fff;
-  font-size: 19px;
-  line-height: 1.47384;
-  font-weight: 300;
+
   letter-spacing: .018em;
+
   color: #111;
+  background-color: #fff;
 }
 
 * {
   box-sizing: border-box;
+
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -32,7 +35,10 @@ body {
   margin-bottom: 0;
 }
 
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
   margin: calc(.6ex - 4px) 0;
 }
 
@@ -51,8 +57,9 @@ h4:last-child {
 }
 
 hr {
-  padding: 24px 0 0;
   margin: 0;
+  padding: 24px 0 0;
+
   border: 0;
 }
 
@@ -70,8 +77,9 @@ hr.x8 {
 }
 
 a {
-  color: #0070c9;
   text-decoration: none;
+
+  color: #0070c9;
 }
 
 a:hover {
@@ -82,7 +90,8 @@ strong {
   font-weight: inherit;
 }
 
-.centre, .centre * {
+.centre,
+.centre * {
   text-align: center;
 }
 
@@ -92,16 +101,19 @@ strong {
 
 .at-sign {
   position: relative;
+
   margin: 0 3px 0 2px;
 }
 
 .at-sign::before {
-  content: '';
   position: absolute;
-  bottom: 0;
   top: 20%;
-  left: -.2ex;
   right: -.2ex;
+  bottom: 0;
+  left: -.2ex;
+
+  content: '';
+
   border: .1ex solid #333;
   border-radius: 9999px;
 }
@@ -111,22 +123,29 @@ strong {
 }
 
 .period::before {
-  content: '\00B7';
   position: relative;
   top: .5ex;
+
+  content: '\00B7';
 }
 
 .obfuscate:before {
-  content: '60 4w4y m34n 60t5!';
   position: absolute;
-  opacity: 0;
+
+  content: '60 4w4y m34n 60t5!';
   user-select: none;
+
+  opacity: 0;
 }
 
-.Header, .Main, .Footer {
+.Header,
+.Main,
+.Footer {
   margin: 0;
-  transform: translate3d(0, 0, 0);
+
   -webkit-transform: translate3d(0, 0, 0);
+          transform: translate3d(0, 0, 0);
+
   -webkit-backface-visibility: hidden;
   -webkit-perspective: 1000;
 }

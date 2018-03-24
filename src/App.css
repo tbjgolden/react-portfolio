@@ -1,6 +1,7 @@
 .App-row {
-  padding: 40px 0;
   position: relative;
+
+  padding: 40px 0;
 }
 
 .App-row.white {
@@ -15,23 +16,26 @@
 
 .App-row-title {
   font-size: 48px;
-  line-height: 1.08365;
   font-weight: 600;
-  letter-spacing: -.003em;
+  line-height: 1.08365;
+
   text-align: center;
+  letter-spacing: -.003em;
 }
 
 .App-row-description,
 .App-row-header {
   font-size: 21px;
   line-height: 1.38105;
-  letter-spacing: .011em;
+
   text-align: center;
+  letter-spacing: .011em;
 }
 
 .App-row-description {
-  color: #333;
   font-weight: 400;
+
+  color: #333;
 }
 
 .App-row-header {
@@ -59,6 +63,7 @@
   .App-row-title {
     font-size: 27px;
     line-height: 1.2963;
+
     letter-spacing: .008em;
   }
 
@@ -66,13 +71,15 @@
   .App-row-header {
     font-size: 19px;
     line-height: 1.42115;
+
     letter-spacing: .012em;
   }
 
   .jumbotron-tagline {
     font-size: 59px;
-    line-height: 1.10227;
     font-weight: 500;
+    line-height: 1.10227;
+
     letter-spacing: -.025em;
   }
 }
@@ -81,16 +88,18 @@
   .App-row-title {
     font-size: 24px;
     line-height: 1.33349;
-    letter-spacing: .009em;
+
     text-align: left;
+    letter-spacing: .009em;
   }
 
   .App-row-description,
   .App-row-header {
     font-size: 18px;
     line-height: 1.4446;
-    letter-spacing: .016em;
+
     text-align: left;
+    letter-spacing: .016em;
   }
 }
 
@@ -98,20 +107,23 @@
   .App-row-title {
     font-size: 24px;
     line-height: 1.33349;
-    letter-spacing: .009em;
+
     text-align: left;
+    letter-spacing: .009em;
   }
 
   .App-row-description,
   .App-row-header {
     font-size: 18px;
     line-height: 1.4446;
-    letter-spacing: .016em;
+
     text-align: left;
+    letter-spacing: .016em;
   }
 
   .App-notch .App-row-title {
     font-size: 5vw;
+
     letter-spacing: .006em;
   }
 
