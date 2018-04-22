@@ -11,7 +11,7 @@ const Home = ({ screenWidth }) => (
   <div>
     <Jumbotron />
     <div className='App-row-sizer'>
-      <div className='App-row-title centre'>The best TomGolden yet.</div>
+      <div className='App-row-title centre'>The best TomGolden we{'’'}ve ever produced.</div>
       <div className='App-row-description centre'>
         The new <Strong>TomGolden</Strong> comes with a new 15 inch MacBook Pro as standard.
       </div>

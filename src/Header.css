@@ -19,6 +19,10 @@
   filter: drop-shadow(0 0 .1ex) drop-shadow(0 0 .3ex);
 }
 
+.Header .Header-menu-nav-list-item-link:focus {
+  filter: drop-shadow(0 0 .3ex);
+}
+
 .Header::after {
   position: absolute;
   z-index: -9999;

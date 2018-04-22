@@ -19,7 +19,7 @@ class Header extends Component {
       { title: 'Experience', url: '/experience' },
       { title: 'Contact', url: '/contact' },
       // { title: 'About This Site', url: '/about-this-site' },
-      // { title: 'Blog', url: '/blog' }
+      { title: 'iBlog', url: '/blog' }
     ]));
 
   componentDidMount = () => {

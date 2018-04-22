@@ -84,8 +84,8 @@ const xpList = [
     endYear: 2016,
     headerLines: [],
     paragraphs: [
-      'Redesigned and rebuilt The Boar\'s website.',
-      'Won \'Best Design\' award and nominated for \'Best Website\' at the national student publication awards.'
+      'Redesigned and rebuilt The Boar’s website.',
+      'Won ‘Best Design’ award and nominated for ‘Best Website’ at the national student publication awards.'
     ],
     tags: ['contract', 'uk', 'warwick']
   }

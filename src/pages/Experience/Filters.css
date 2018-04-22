@@ -69,3 +69,13 @@
 .active > .tag-children {
   display: inline;
 }
+
+@media (max-width: 735px) {
+  .Experience-block .Columns > .Columns-column:first-child {
+    align-self: flex-start;
+  }
+
+  .Experience .Experience-block .App-row-sizer {
+    padding: 24px 0 24px 24px;
+  }
+}

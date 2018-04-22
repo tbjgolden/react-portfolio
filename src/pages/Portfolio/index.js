@@ -40,7 +40,7 @@ const Portfolio = () => (
         <GalleryItem>
           <GalleryText>
             <div className='Gallery-title'>live.gobiapp.com</div>
-            <div className='Gallery-description'>Gobi's premium live feed of snaps.</div>
+            <div className='Gallery-description'>Gobi{'’'}s premium live feed of snaps.</div>
           </GalleryText>
           {createPortfolioGalleryImage('images/live.gobiapp.com.png')}
         </GalleryItem>

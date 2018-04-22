@@ -44,6 +44,7 @@ class Filters extends Component {
                           <div
                             name={tag}
                             tabIndex='0'
+                            role='button'
                             className='tag'
                             onClick={() => this.onButtonClick(tagObj)}
                           >
