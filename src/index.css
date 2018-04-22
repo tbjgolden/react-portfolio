@@ -17,7 +17,7 @@ body {
   letter-spacing: .018em;
 
   color: #111;
-  background-color: #fff;
+  background-color: #f2f2f2;
 }
 
 * {
@@ -25,6 +25,11 @@ body {
 
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+
+:focus {
+  outline: 0;
+  filter: drop-shadow(0 0 2px);
 }
 
 :first-child {
@@ -90,52 +95,14 @@ strong {
   font-weight: inherit;
 }
 
+.background-cover {
+  background-size: cover;
+  background-position: center;
+}
+
 .centre,
 .centre * {
   text-align: center;
-}
-
-.disable-select {
-  user-select: none;
-}
-
-.at-sign {
-  position: relative;
-
-  margin: 0 3px 0 2px;
-}
-
-.at-sign::before {
-  position: absolute;
-  top: 20%;
-  right: -.2ex;
-  bottom: 0;
-  left: -.2ex;
-
-  content: '';
-
-  border: .1ex solid #333;
-  border-radius: 9999px;
-}
-
-.period {
-  position: relative;
-}
-
-.period::before {
-  position: relative;
-  top: .5ex;
-
-  content: '\00B7';
-}
-
-.obfuscate:before {
-  position: absolute;
-
-  content: '60 4w4y m34n 60t5!';
-  user-select: none;
-
-  opacity: 0;
 }
 
 .Header,

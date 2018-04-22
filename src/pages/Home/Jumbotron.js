@@ -1,13 +1,29 @@
 import React, { Component } from 'react';
-import './HomeJumbotron.css';
-import Jumbotron from './Jumbotron';
+import './Jumbotron.css';
+import Jumbotron from '../../Jumbotron';
 
 export default class HomeJumbotron extends Component {
   componentDidMount () {
+    if (this.canvas) this.canvas.style.opacity = '0';
+    if (this.image) this.image.style.opacity = '0';
+
     const ctx = this.canvas.getContext('2d');
     const laptopScreenImg = new Image();
 
-    laptopScreenImg.addEventListener('load', () => {
+    const onScreenLoad = new Promise(res => {
+      laptopScreenImg.addEventListener('load', res);
+      setTimeout(res, 2000);
+    });
+    const onBgLoad = new Promise(res => {
+      this.image.addEventListener('load', res);
+      setTimeout(res, 2000);
+    });
+
+    laptopScreenImg.src = 'images/mylaptopscreen.jpg';
+
+    Promise.all([onScreenLoad, onBgLoad]).then(() => {
+      if (this.image) this.image.style.opacity = '1';
+
       const width = this.canvas.width = laptopScreenImg.width;
       const height = this.canvas.height = laptopScreenImg.height;
 
@@ -29,17 +45,16 @@ export default class HomeJumbotron extends Component {
         if (x < 0 || x > (width - 1)) return 0;
         const floorX = ~~x;
         const p = getPixelPointer(floorX, y);
-        return x === floorX
-          ? [d[p], d[p + 1], d[p + 2]]
-          : [
-            d[p] + d[p + 4] >> 1,
-            d[p + 1] + d[p + 5] >> 1,
-            d[p + 2] + d[p + 6] >> 1
-          ];
+        const diff = x - floorX;
+        return [
+          ((1 - diff) * d[p] + diff * d[p + 4]),
+          ((1 - diff) * d[p + 1] + diff * d[p + 5]),
+          ((1 - diff) * d[p + 2] + diff * d[p + 6])
+        ];
       }
 
       const midX = width >> 1;
-      const delta = 410;
+      const delta = height * 0.23;
 
       for (let y = 0; y < height; y++) {
         const percY = y / height;
@@ -59,13 +74,14 @@ export default class HomeJumbotron extends Component {
       imageData.data.set(buf8);
       ctx.putImageData(imageData, 0, 0);
 
-      this.canvas.style.zIndex = '0';
+      if (this.canvas) this.canvas.style.zIndex = '0';
       setTimeout(() => {
-        this.canvas.style.opacity = '1';
-      }, 500);
+        if (this.canvas) this.canvas.style.opacity = '1';
+      }, 800);
     });
-    laptopScreenImg.src = 'images/mylaptopscreen.jpg';
   }
+
+
 
   render () {
     return (
@@ -78,10 +94,12 @@ export default class HomeJumbotron extends Component {
             <a href='film.html' target='_blank'>Watch the design film</a>
           </div>
         </div>
-        <div className='jumbotron-laptop-image-container'>
-          <img className='jumbotron-laptop-image' alt='My laptop' src='images/mylaptop.jpg' />
-          <div className='jumbotron-laptop-image-screen'>
-            <canvas ref={el => { this.canvas = el; }} />
+        <div className='jumbotron-laptop-image-sizer-outer'>
+          <div className='jumbotron-laptop-image-sizer-inner'>
+            <img ref={el => { this.image = el; }} className='jumbotron-laptop-image' alt='My laptop' src='images/mylaptop.jpg' />
+            <div className='jumbotron-laptop-image-screen'>
+              <canvas ref={el => { this.canvas = el; }} />
+            </div>
           </div>
         </div>
       </Jumbotron>

@@ -1,7 +1,7 @@
 import React from 'react';
 import './MobileDiagram.css';
 
-export default () => {
+const MobileDiagram = () => {
   return (
     <div className='MobileDiagram'>
       <div className='MobileDiagram-screen-container'>
@@ -31,4 +31,6 @@ export default () => {
       </div>
     </div>
   );
-}
+};
+
+export default MobileDiagram;

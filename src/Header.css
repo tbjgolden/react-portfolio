@@ -46,6 +46,8 @@
 .Header-cart-button {
   position: relative;
   z-index: 2;
+
+  color: #fff;
 }
 
 .Header-logo {
@@ -160,6 +162,7 @@
 
 .Header-cart-button:hover::before,
 .Header-cart-button:hover::after {
+  color: #b4b4b4;
   border-color: #b4b4b4;
 }
 
@@ -194,7 +197,7 @@
 
   transition: color .2s ease-in-out;
   text-decoration: none;
-  letter-spacing: -.021em;
+  letter-spacing: normal;
 
   color: #fff;
 }
@@ -202,6 +205,10 @@
 .Header-menu-nav-list-item-link:hover {
   text-decoration: none;
 
+  color: #b4b4b4;
+}
+
+.Header-menu-nav-list-item-link.active {
   color: #b4b4b4;
 }
 
@@ -254,8 +261,6 @@
     font-size: 17px;
 
     display: block;
-
-    letter-spacing: -.021em;
   }
 
   .Header.is-open .Header-cart-button {

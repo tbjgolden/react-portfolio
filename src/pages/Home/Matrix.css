@@ -20,6 +20,7 @@
 }
 
 .Matrix + .App-row-sizer {
+  max-width: none;
   margin-top: -40px;
 
   background: rgba(0,0,0,.8);

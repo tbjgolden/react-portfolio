@@ -1,9 +1,37 @@
-.Footer .App-row-description {
-  line-height: 1.2;
+.Footer {
+  position: relative;
+
+  font-size: 11px;
+  font-weight: 400;
+  line-height: 1.45455;
+
+  text-align: left;
+  letter-spacing: .005em;
+
+  color: #888;
+  background-color: #f2f2f2;
+}
+
+.Footer::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 0;
+  width: 100%;
+
+  background-color: inherit;
+}
+
+.Footer * {
+  font: inherit;
+}
+
+.Footer > .App-row-sizer {
+  padding: 22px 22px 28px;
 }
 
 @media (max-width: 767px) {
   .Footer > .App-row-sizer {
-    padding: calc(12px + 5vw);
+    padding: 16px 16px 22px;
   }
 }

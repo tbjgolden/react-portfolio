@@ -5,7 +5,15 @@
 }
 
 .App-row.white {
+  background: linear-gradient(to bottom, #f7f7f7 0%, #fff 100%);
+}
+
+.App-row.white-reverse {
   background: linear-gradient(to bottom, #fff 0%, #f7f7f7 100%);
+}
+
+.App-row.white-text {
+  color: #fff;
 }
 
 .App-row-sizer {
@@ -42,6 +50,17 @@
   font-weight: 500;
 }
 
+.App-row-smallprint {
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+
+  text-align: center;
+  letter-spacing: 0;
+
+  color: #333;
+}
+
 .App-row-description:not(:last-child) {
   margin-bottom: 1.6ex;
 }
@@ -52,7 +71,7 @@
 
 .App-row-title + .App-row-description,
 .App-row-header + .App-row-description {
-  padding-top: 1ex;
+  padding-top: .5ex;
 }
 
 .App-notch > .App-row-description {
@@ -101,33 +120,8 @@
     text-align: left;
     letter-spacing: .016em;
   }
-}
 
-@media (max-width: 735px) {
-  .App-row-title {
-    font-size: 24px;
-    line-height: 1.33349;
-
+  .App-row-smallprint {
     text-align: left;
-    letter-spacing: .009em;
-  }
-
-  .App-row-description,
-  .App-row-header {
-    font-size: 18px;
-    line-height: 1.4446;
-
-    text-align: left;
-    letter-spacing: .016em;
-  }
-
-  .App-notch .App-row-title {
-    font-size: 5vw;
-
-    letter-spacing: .006em;
-  }
-
-  .App-notch .App-row-description {
-    display: none;
   }
 }

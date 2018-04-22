@@ -1,7 +1,7 @@
 import React from 'react';
 import './WebDiagram.css';
 
-export default () => {
+const WebDiagram = () => {
   return (
     <div className='WebDiagram'>
       <div className='WebDiagram-screen-container'>
@@ -31,4 +31,6 @@ export default () => {
       </div>
     </div>
   );
-}
+};
+
+export default WebDiagram;

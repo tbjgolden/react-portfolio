@@ -1,15 +1,16 @@
 import React from 'react';
-import Strong from './Strong';
 import './Footer.css';
 
-export default ({ isAndroid }) => {
+const Footer = ({ isAndroid }) => {
   return (
     <footer className='Footer'>
-      <div className='App-row-sizer App-row-description'>
+      <div className='App-row-sizer'>
         <small>
-          &copy; <Strong>TomGolden</Strong>. (Disclaimer) TomGolden&nbsp;is&nbsp;probably&nbsp;not a trademark.
+          Copyright &copy; {(new Date()).getFullYear()} Tom Golden. All rights reserved.
         </small>
       </div>
     </footer>
   );
-}
+};
+
+export default Footer;
