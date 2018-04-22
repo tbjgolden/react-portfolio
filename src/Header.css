@@ -15,6 +15,10 @@
   color: #fff;
 }
 
+.Header :focus {
+  filter: drop-shadow(0 0 .1ex) drop-shadow(0 0 .3ex);
+}
+
 .Header::after {
   position: absolute;
   z-index: -9999;

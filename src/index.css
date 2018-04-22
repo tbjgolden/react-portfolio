@@ -29,7 +29,7 @@ body {
 
 :focus {
   outline: 0;
-  filter: drop-shadow(0 0 2px);
+  filter: drop-shadow(0 0 .2ex);
 }
 
 :first-child {
