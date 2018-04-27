@@ -41,7 +41,8 @@ class Blog extends Component {
           <div className='App-row white'>
             <div className='App-row-sizer'>
               <div className='App-row-title'>iBlog</div>
-              <div className='App-row-subtitle'>The best iBlog yet.</div>
+              <div className='App-row-subtitle'>The best iBlog we{'’'}ve ever produced.</div>
+              <div className='Blog-panic-button' tabindex='0' role='button'>I don't like how this page looks</div>
             </div>
           </div>
         </Jumbotron>

@@ -12,11 +12,9 @@ export default class HomeJumbotron extends Component {
 
     const onScreenLoad = new Promise(res => {
       laptopScreenImg.addEventListener('load', res);
-      setTimeout(res, 2000);
     });
     const onBgLoad = new Promise(res => {
       this.image.addEventListener('load', res);
-      setTimeout(res, 2000);
     });
 
     laptopScreenImg.src = 'images/mylaptopscreen.jpg';

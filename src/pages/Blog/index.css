@@ -6,45 +6,56 @@
   letter-spacing: -.003em;
 }
 
+
+
 .Blog th {
   border-top: 2px solid #ddd;
   background-color: #eee;
 }
 
-.Blog th, .Blog tr:last-child td {
+.Blog th,
+.Blog tr:last-child td {
   border-bottom: 2px solid #ddd;
 }
 
-.Blog th, .Blog td {
+.Blog th,
+.Blog td {
   padding: 4px;
 }
 
 .Blog hr {
-  border-bottom: 1px solid #eee;
-  border-top: 1px solid #ddd;
   margin: 0 -24px;
+
+  border-top: 1px solid #ddd;
+  border-bottom: 1px solid #eee;
 }
 
 .Blog pre {
   display: flex;
-  background-color: #eee;
+
   padding: 8px 0;
+
+  background-color: #eee;
 }
 
-.Blog pre:before, .Blog pre:after {
-  content: '';
+.Blog pre:before,
+.Blog pre:after {
   display: block;
+
   width: 8px;
+
+  content: '';
 }
 
 .Blog :not(pre) > code {
-  background-color: #ddd;
   padding: 8px;
+
+  background-color: #ddd;
 }
 
 .Blog code {
-  font-size: 16px;
   font-family: 'Fira Code', 'Fira Mono', 'Inconsolata', monospace;
+  font-size: 16px;
 }
 
 .Blog strong {
