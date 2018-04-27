@@ -1,5 +1,5 @@
 import React from 'react';
-import './WebDiagram.css';
+import './WebDiagram.scss';
 
 const WebDiagram = () => {
   return (

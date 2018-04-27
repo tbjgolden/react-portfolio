@@ -6,8 +6,6 @@
   letter-spacing: -.003em;
 }
 
-
-
 .Blog th {
   border-top: 2px solid #ddd;
   background-color: #eee;
@@ -38,8 +36,8 @@
   background-color: #eee;
 }
 
-.Blog pre:before,
-.Blog pre:after {
+.Blog pre::before,
+.Blog pre::after {
   display: block;
 
   width: 8px;

@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Jumbotron from '../../Jumbotron';
 import nicemark from '../../lib/nicemark.min';
-import './index.css';
+import './index.scss';
 
 class Blog extends Component {
   constructor (props) {

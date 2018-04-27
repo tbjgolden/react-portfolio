@@ -7,7 +7,7 @@ import Contact from './pages/Contact';
 import Blog from './pages/Blog';
 import ComingSoon from './pages/ComingSoon';
 import NotFound from './pages/NotFound';
-import './Main.css';
+import './Main.scss';
 
 class Main extends Component {
   componentWillReceiveProps = nextProps => {

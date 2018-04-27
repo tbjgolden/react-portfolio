@@ -1,5 +1,5 @@
 import React from 'react';
-import './Columns.css';
+import './Columns.scss';
 
 const Columns = ({ children }) => {
   return (

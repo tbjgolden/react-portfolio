@@ -1,5 +1,5 @@
 import React from 'react';
-import './Period.css';
+import './Period.scss';
 
 export default ({ beginMonth, beginYear, endMonth, endYear }) => {
   const finished = endMonth && endYear;

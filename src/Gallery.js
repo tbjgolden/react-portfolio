@@ -1,5 +1,5 @@
 import React from 'react';
-import './Gallery.css';
+import './Gallery.scss';
 
 const Gallery = ({ children, className, ...props }) => (
   <div className={`Gallery ${className || ''}`} {...props}>

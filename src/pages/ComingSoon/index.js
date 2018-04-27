@@ -1,5 +1,5 @@
 import React from 'react';
-import './index.css';
+import './index.scss';
 
 const ComingSoon = ({ history }) => (
   <div className='App-row-sizer'>

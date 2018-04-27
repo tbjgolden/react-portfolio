@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import './Header.css';
+import './Header.scss';
 
 class Header extends Component {
   state = { menuOpen: false, redirect: false };

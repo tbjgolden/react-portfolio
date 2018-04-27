@@ -5,7 +5,7 @@ import WebDiagram from './WebDiagram';
 import MobileDiagram from './MobileDiagram';
 import Matrix from './Matrix';
 import Jumbotron from './Jumbotron';
-import './index.css';
+import './index.scss';
 
 const Home = ({ screenWidth }) => (
   <div>

@@ -1,7 +1,7 @@
 import React from 'react';
 import Jumbotron from '../../Jumbotron';
 import Gallery, { GalleryItem, GalleryRow, GalleryText, GalleryImage } from '../../Gallery';
-import './index.css';
+import './index.scss';
 
 const createPortfolioGalleryImage = src => (
   <GalleryImage

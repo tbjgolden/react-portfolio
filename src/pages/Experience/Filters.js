@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Columns from '../../Columns';
 import Period from './Period';
 import xpList, { tags } from './data.js'
-import './Filters.css';
+import './Filters.scss';
 
 class Filters extends Component {
   tagTree = new TagTree(tags);

@@ -1,7 +1,7 @@
 import React from 'react';
 import Jumbotron from '../../Jumbotron';
 import Columns from '../../Columns';
-import './index.css';
+import './index.scss';
 
 const Contact = () => (
   <Jumbotron>

@@ -2,7 +2,7 @@ import React from 'react';
 import Jumbotron from '../../Jumbotron';
 import Columns from '../../Columns';
 import Filters from './Filters';
-import './index.css';
+import './index.scss';
 
 const Experience = () => (
   <div className='Experience'>
