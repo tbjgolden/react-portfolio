@@ -6,19 +6,38 @@
   letter-spacing: -.003em;
 }
 
-.Blog th {
-  border-top: 2px solid #ddd;
-  background-color: #eee;
+.Blog-title::after {
+  content: 'iBlog';
 }
 
-.Blog th,
-.Blog tr:last-child td {
-  border-bottom: 2px solid #ddd;
+.Blog-subtitle::after {
+  content: 'The best iBlog we’ve ever produced.';
+}
+
+.Blog-panic-button-container {
+  padding-top: 2ex;
+}
+
+.Blog-panic-button {
+  display: inline-block;
+  cursor: pointer;
+  padding: 1ex 2ex;
+  font-size: 80%;
+  background-color: #ddd;
+}
+
+.Blog-panic-button::after {
+  content: 'I don’t like how this page looks';
+}
+
+.Blog th {
+  background-color: #eee;
+  font-weight: 500;
 }
 
 .Blog th,
 .Blog td {
-  padding: 4px;
+  padding: 4px 8px;
 }
 
 .Blog hr {
@@ -58,4 +77,8 @@
 
 .Blog strong {
   font-weight: 500;
+}
+
+.Blog a {
+  border-bottom: 2px solid;
 }

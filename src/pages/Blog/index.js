@@ -1,7 +1,10 @@
 import React, { Component } from 'react';
 import Jumbotron from '../../Jumbotron';
 import nicemark from '../../lib/nicemark.min';
+import styleSheets from './data';
 import './index.scss';
+
+let styleSheet = 0;
 
 class Blog extends Component {
   constructor (props) {
@@ -32,6 +35,11 @@ class Blog extends Component {
     });
   }
 
+  toggleStyle () {
+    styleSheet = ((styleSheet || 0) + 1) % styleSheets.length;
+    this.forceUpdate();
+  }
+
   render () {
     const { fetched } = this.state;
 
@@ -40,42 +48,49 @@ class Blog extends Component {
         <Jumbotron>
           <div className='App-row white'>
             <div className='App-row-sizer'>
-              <div className='App-row-title'>iBlog</div>
-              <div className='App-row-subtitle'>The best iBlog we{'’'}ve ever produced.</div>
-              <div className='Blog-panic-button' tabindex='0' role='button'>I don't like how this page looks</div>
+              <div className='App-row-title Blog-title' />
+              <div className='App-row-subtitle Blog-subtitle' />
+              <div className='App-row-description Blog-panic-button-container'>
+                <div className='Blog-panic-button' onClick={() => this.toggleStyle()} tabIndex='0' role='button' />
+              </div>
             </div>
           </div>
         </Jumbotron>
-        <div className='App-row white'>
-          <div className='App-row-sizer'>
-            <div id='blog-container' />
-            {
-              fetched
-                ? null
-                : (
+        <div id='blog-container' />
+        {
+          fetched
+            ? null
+            : (
+              <div className='App-row white'>
+                <div className='App-row-sizer'>
                   <div className='App-row-header'>
                     <img alt='Loading...' src='images/loading.gif' style={{ width: '2.5ex' }} />
                   </div>
-                )
-            }
-          </div>
-        </div>
+                </div>
+              </div>
+            )
+        }
+        <style dangerouslySetInnerHTML={{ __html: styleSheets[styleSheet] }} />
       </div>
     );
   }
 }
 
 function generateBlog (posts, container) {
-  container.innerHTML = posts.map(generateBlogPost).join('<hr />');
+  container.innerHTML = posts.map(generateBlogPost).join('');
 }
 
 function generateBlogPost (post, i) {
   return `
-    <article id="${post.title.replace(/[^a-zA-Z]/g, '').toLowerCase()}" class="blog-post">
-      <h1 class="Blog-post-title">${post.title}</h1>
-      <p><small>Published on ${post.date}</small></p>
-      ${post.html}
-    </article>
+    <div class="App-row white">
+      <div class="App-row-sizer">
+        <article id="${post.title.replace(/[^a-zA-Z]/g, '').toLowerCase()}" class="blog-post">
+          <h1 class="Blog-post-title">${post.title}</h1>
+          <p><small>Published on ${post.date}</small></p>
+          ${post.html}
+        </article>
+      </div>
+    </div>
   `;
 }
 
