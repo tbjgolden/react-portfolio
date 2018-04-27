@@ -19,10 +19,14 @@
 }
 
 .Blog-panic-button {
-  display: inline-block;
-  cursor: pointer;
-  padding: 1ex 2ex;
   font-size: 80%;
+
+  display: inline-block;
+
+  padding: 1ex 2ex;
+
+  cursor: pointer;
+
   background-color: #ddd;
 }
 
@@ -31,8 +35,9 @@
 }
 
 .Blog th {
-  background-color: #eee;
   font-weight: 500;
+
+  background-color: #eee;
 }
 
 .Blog th,
@@ -48,11 +53,16 @@
 }
 
 .Blog pre {
-  display: flex;
+  overflow-x: auto;
 
   padding: 8px 0;
 
   background-color: #eee;
+}
+
+.Blog pre > code {
+  padding: 0 8px;
+  display: inline-block;
 }
 
 .Blog pre::before,
@@ -72,7 +82,7 @@
 
 .Blog code {
   font-family: 'Fira Code', 'Fira Mono', 'Inconsolata', monospace;
-  font-size: 16px;
+  font-size: 90%;
 }
 
 .Blog strong {
@@ -80,5 +90,5 @@
 }
 
 .Blog a {
-  border-bottom: 2px solid;
+  border-bottom: .1ex solid;
 }

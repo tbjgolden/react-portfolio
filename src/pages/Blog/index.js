@@ -15,7 +15,7 @@ class Blog extends Component {
   }
 
   componentDidMount () {
-    let numberLeft = 1;
+    let numberLeft = 2;
     const posts = new Array(numberLeft).fill(null);
 
     const blogContainerEl = document.querySelector('#blog-container');
@@ -77,7 +77,7 @@ class Blog extends Component {
 }
 
 function generateBlog (posts, container) {
-  container.innerHTML = posts.map(generateBlogPost).join('');
+  container.innerHTML = posts.map(generateBlogPost).reverse().join('');
 }
 
 function generateBlogPost (post, i) {
