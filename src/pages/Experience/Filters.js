@@ -15,7 +15,7 @@ class Filters extends Component {
     this.setState({ loadingIndicatorShown: true });
     setTimeout(() => {
       this.setState({ loadingIndicatorShown: false })
-    }, 500);
+    }, 250);
   };
 
   render = () => {
@@ -198,16 +198,16 @@ class TagTree {
             } else {
               child.active = false;
             }
+            _this._DFS(
+              node => {
+                if (node !== child) {
+                  node.active = false;
+                }
+              },
+              {},
+              child
+            );
           });
-          _this._DFS(
-            node => {
-              if (node !== this) {
-                node.active = false;
-              }
-            },
-            {},
-            this
-          );
         }
       };
 

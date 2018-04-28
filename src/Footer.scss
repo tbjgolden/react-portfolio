@@ -30,6 +30,41 @@
   padding: 22px 22px 28px;
 }
 
+.Footer-top {
+  padding: 0 0 10px;
+  margin: 0 0 10px;
+  border-bottom: 1px solid #d6d6d6;
+
+  .Columns {
+    padding: 0;
+  }
+}
+
+.Footer-top .Columns-column {
+  padding: 20px 24px 20px 0;
+  text-align: left;
+  flex-basis: 0;
+  min-width: 120px;
+
+  > :first-child {
+    color: #333;
+    font-weight: 600;
+    letter-spacing: -.008em;
+  }
+
+  > :not(:first-child) {
+    margin-top: 1.4ex;
+
+    a {
+      color: #555;
+
+      &:hover {
+        color: #333;
+      }
+    }
+  }
+}
+
 @media (max-width: 767px) {
   .Footer > .App-row-sizer {
     padding: 16px 16px 22px;

@@ -1,4 +1,7 @@
-export default [
+import { posts as _posts } from './posts';
+export const posts = _posts;
+
+export const styleSheets = [
   '',
   `
   @font-face {

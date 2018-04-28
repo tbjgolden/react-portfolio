@@ -138,6 +138,10 @@ module.exports = {
               name: 'static/media/[name].[hash:8].[ext]',
             },
           },
+          {
+            test: /\.(txt|md)$/,
+            loader: require.resolve('raw-loader')
+          },
           // Process JS with Babel.
           {
             test: /\.(js|jsx|mjs)$/,

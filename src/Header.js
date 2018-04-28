@@ -2,6 +2,14 @@ import React, { Component } from 'react';
 import { Link, withRouter } from 'react-router-dom';
 import './Header.scss';
 
+export const routes = [
+  { title: 'Portfolio', url: '/portfolio' },
+  { title: 'Experience', url: '/experience' },
+  { title: 'Contact', url: '/contact' },
+  // { title: 'About This Site', url: '/about-this-site' },
+  { title: 'Blog', url: '/blog' }
+];
+
 class Header extends Component {
   state = { menuOpen: false, redirect: false };
 
@@ -14,19 +22,11 @@ class Header extends Component {
           </Link>
         </li>
       ))
-    )([
-      { title: 'Portfolio', url: '/portfolio' },
-      { title: 'Experience', url: '/experience' },
-      { title: 'Contact', url: '/contact' },
-      // { title: 'About This Site', url: '/about-this-site' },
-      { title: 'Blog', url: '/blog' }
-    ]));
+    )(routes));
 
   componentDidMount = () => {
     this.top = document.getElementById('top');
   };
-
-  mousewheelEvent = e => !!e.preventDefault();
 
   toggleMenu = (menuOpen = !this.state.menuOpen) => {
     document.body.style.overflowY = menuOpen ? 'hidden' : 'auto';
