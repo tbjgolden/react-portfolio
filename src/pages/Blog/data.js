@@ -43,6 +43,11 @@ export const styleSheets = [
     background: #fff;
     border: 2px solid;
     border-radius: 4px;
+    transition: color .2s ease-in-out, border-color .2s ease-in-out;
+  }
+  .Blog-panic-button:hover {
+    border-color: #4282F4;
+    color: #4282F4 !important;
   }
   .BlogPost:nth-child(2n-1) {
     background: #e3f2fd;

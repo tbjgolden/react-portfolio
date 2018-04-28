@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
-import { Switch, Route } from 'react-router-dom';
+import { Switch, Route, Link } from 'react-router-dom';
 import NotFound from '../NotFound';
 import BlogPost from './BlogPost';
 import AllPosts from './AllPosts';
+import SearchBrowse from './SearchBrowse';
 import Jumbotron from '../../Jumbotron';
 import { styleSheets, posts } from './data';
 import './index.scss';
@@ -16,6 +17,8 @@ class Blog extends Component {
   }
 
   render () {
+    const { location } = this.props;
+
     return (
       <div className='Blog'>
         <Jumbotron>
@@ -26,11 +29,19 @@ class Blog extends Component {
               <div className='App-row-description Blog-panic-button-container'>
                 <button className='Blog-panic-button' onClick={() => this.toggleStyle()} />
               </div>
+              <div className='App-row-description'>
+                {
+                  location.pathname === '/blog/posts'
+                    ? <Link to='/blog'>Read posts</Link>
+                    : <Link to='/blog/posts'>Browse posts</Link>
+                }
+              </div>
             </div>
           </div>
         </Jumbotron>
         <Switch>
           <Route exact path={`/blog`} render={() => <AllPosts posts={posts} />} />
+          <Route exact path={`/blog/posts`} render={() => <SearchBrowse posts={posts} />} />
           {
             posts.map(post => (
               <Route
