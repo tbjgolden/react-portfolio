@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import { Switch, Route } from 'react-router-dom';
+import NotFound from '../NotFound';
+import BlogPost from './BlogPost';
+import AllPosts from './AllPosts';
 import Jumbotron from '../../Jumbotron';
 import { styleSheets, posts } from './data';
 import './index.scss';
@@ -11,10 +15,6 @@ class Blog extends Component {
     this.forceUpdate();
   }
 
-  componentDidMount () {
-    (this.blogContainer || {}).innerHTML = posts.map(generateBlogPost).join('');
-  }
-
   render () {
     return (
       <div className='Blog'>
@@ -24,30 +24,29 @@ class Blog extends Component {
               <div className='App-row-title Blog-title' />
               <div className='App-row-subtitle Blog-subtitle' />
               <div className='App-row-description Blog-panic-button-container'>
-                <div className='Blog-panic-button' onClick={() => this.toggleStyle()} tabIndex='0' role='button' />
+                <button className='Blog-panic-button' onClick={() => this.toggleStyle()} />
               </div>
             </div>
           </div>
         </Jumbotron>
-        <div id='blog-container' ref={el => { this.blogContainer = el; }} />
+        <Switch>
+          <Route exact path={`/blog`} render={() => <AllPosts posts={posts} />} />
+          {
+            posts.map(post => (
+              <Route
+                key={post.date}
+                exact
+                path={`/blog/${post.url}`}
+                render={() => <BlogPost {...post} />}
+              />
+            ))
+          }
+          <Route render={() => <NotFound />}/>
+        </Switch>
         <style dangerouslySetInnerHTML={{ __html: styleSheets[styleSheet] }} />
       </div>
     );
   }
-}
-
-function generateBlogPost (post, i) {
-  return `
-    <div class="App-row white">
-      <div class="App-row-sizer">
-        <article id="${post.title.replace(/[^a-zA-Z]/g, '').toLowerCase()}" class="blog-post">
-          <h1 class="Blog-post-title">${post.title}</h1>
-          <p><small>Published on ${post.date}</small></p>
-          ${post.html}
-        </article>
-      </div>
-    </div>
-  `;
 }
 
 export default Blog;

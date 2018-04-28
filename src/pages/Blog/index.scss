@@ -1,11 +1,3 @@
-.Blog-post-title {
-  font-size: 48px;
-  font-weight: 600;
-  line-height: 1.08365;
-
-  letter-spacing: -.003em;
-}
-
 .Blog-title::after {
   content: 'iBlog';
 }
@@ -32,63 +24,4 @@
 
 .Blog-panic-button::after {
   content: 'I don’t like how this page looks';
-}
-
-.Blog th {
-  font-weight: 500;
-
-  background-color: #eee;
-}
-
-.Blog th,
-.Blog td {
-  padding: 4px 8px;
-}
-
-.Blog hr {
-  margin: 0 -24px;
-
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #eee;
-}
-
-.Blog pre {
-  overflow-x: auto;
-
-  padding: 8px 0;
-
-  background-color: #eee;
-}
-
-.Blog pre > code {
-  padding: 0 8px;
-  display: inline-block;
-}
-
-.Blog pre::before,
-.Blog pre::after {
-  display: block;
-
-  width: 8px;
-
-  content: '';
-}
-
-.Blog :not(pre) > code {
-  padding: 8px;
-
-  background-color: #ddd;
-}
-
-.Blog code {
-  font-family: 'Fira Code', 'Fira Mono', 'Inconsolata', monospace;
-  font-size: 90%;
-}
-
-.Blog strong {
-  font-weight: 500;
-}
-
-.Blog a {
-  border-bottom: .1ex solid;
 }

@@ -41,15 +41,13 @@ class Filters extends Component {
                       const { tag, tagName, active, children } = tagObj;
                       return (
                         <div key={tag} className={`tag-container ${active ? 'active' : ''} ${children ? 'has-children' : ''}`}>
-                          <div
+                          <button
                             name={tag}
-                            tabIndex='0'
-                            role='button'
                             className='tag'
                             onClick={() => this.onButtonClick(tagObj)}
                           >
                             {tagName}
-                          </div>
+                          </button>
 
                           {
                             children
@@ -60,15 +58,13 @@ class Filters extends Component {
                                       const { tag, tagName, active, children } = tagObj;
                                       return (
                                         <div key={tag} className={`tag-container ${active ? 'active' : ''} ${children ? 'has-children' : ''}`}>
-                                          <div
+                                          <button
                                             name={tag}
-                                            tabIndex='0'
-                                            role='button'
                                             className='tag'
                                             onClick={() => this.onButtonClick(tagObj)}
                                           >
                                             {tagName}
-                                          </div>
+                                          </button>
                                         </div>
                                       );
                                     })

@@ -13,9 +13,12 @@ const data = files
     variable: `_${file.replace(/\.md$/g, '')}`
   }))
   .map(({ title, date, fileName, variable }) => [
-    `import ${variable} from './${fileName}';`,
-    `  {\n    title: '${title.replace(/'/g, '\\\'')}',\n    date: '${date}',\n    html: nicemark(${variable}.replace(/^\\s*#{1,6} ?([^\\n]+)/, ''))\n  }`
-  ])
+    `import ${variable} from './${fileName}';`, `  {
+    title: '${title.replace(/'/g, '\\\'')}',
+    date: '${date}',
+    html: nicemark(${variable}.replace(/^\\s*#{1,6} ?([^\\n]+)/, '')),
+    url: '${title.toLowerCase().replace(/\s+/g, '-').replace(/[^a-zA-Z0-9\-_]+/g, '')}'
+  }`])
   .reduce(([a, b], [_a, _b]) => [[...a, _a], [...b, _b]], [[], []]);
 
 const indexContent = `import nicemark from '../../../lib/nicemark.min';

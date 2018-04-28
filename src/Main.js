@@ -30,7 +30,7 @@ class Main extends Component {
           <Route exact path="/experience" render={() => <Experience {...props} />}/>
           <Route exact path="/contact" render={() => <Contact {...props} />}/>
           <Route exact path="/about-this-site" render={() => <ComingSoon {...props} />}/>
-          <Route exact path="/blog" render={() => <Blog {...props} />}/>
+          <Route path="/blog" render={() => <Blog {...props} />}/>
           <Route render={() => <NotFound />}/>
         </Switch>
       </main>

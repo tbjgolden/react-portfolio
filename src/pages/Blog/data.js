@@ -44,26 +44,26 @@ export const styleSheets = [
     border: 2px solid;
     border-radius: 4px;
   }
-  #blog-container > .App-row:nth-child(2n-1) {
+  .BlogPost:nth-child(2n-1) {
     background: #e3f2fd;
   }
-  #blog-container > .App-row:nth-child(2n-1) * {
+  .BlogPost:nth-child(2n-1) * {
     color: #002c60 !important;
   }
-  #blog-container > .App-row:nth-child(2n-1) pre,
-  #blog-container > .App-row:nth-child(2n-1) code,
-  #blog-container > .App-row:nth-child(2n-1) th {
+  .BlogPost:nth-child(2n-1) pre,
+  .BlogPost:nth-child(2n-1) code,
+  .BlogPost:nth-child(2n-1) th {
     background-color: #dbefff;
   }
-  #blog-container > .App-row:nth-child(2n) {
+  .BlogPost:nth-child(2n) {
     background: #ffdcc4;
   }
-  #blog-container > .App-row:nth-child(2n) * {
+  .BlogPost:nth-child(2n) * {
     color: #a30000 !important;
   }
-  #blog-container > .App-row:nth-child(2n) pre,
-  #blog-container > .App-row:nth-child(2n) code,
-  #blog-container > .App-row:nth-child(2n) th {
+  .BlogPost:nth-child(2n) pre,
+  .BlogPost:nth-child(2n) code,
+  .BlogPost:nth-child(2n) th {
     background-color: #ffc59e;
   }
   .Header {
@@ -98,6 +98,9 @@ export const styleSheets = [
   }
   .Footer {
     background: #fff;
+  }
+  .Footer-named-after::after {
+    content: 'number';
   }
   `
 ];

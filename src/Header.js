@@ -42,24 +42,17 @@ class Header extends Component {
 
   render = () => {
     const { menu, state, props } = this;
-    const { screenWidth, location } = props;
+    const { location } = props;
     const { menuOpen } = state;
 
-    const cartButtonProps = {};
-    const menuProps = {};
-    if (menuOpen) {
-      cartButtonProps['aria-hidden'] = true;
-    } else {
-      cartButtonProps.tabIndex = '0';
-      if (screenWidth < 768) menuProps.hidden = true;
-    }
+    const cartButtonProps = menuOpen ? { 'aria-hidden': true } : {};
 
     return (
       <header className={`Header ${(menuOpen ? 'is-open' : '')}`}>
         <div className='App-row-sizer' style={{ padding: 0, position: 'relative' }}>
-          <div className='Header-menu-button' onClick={() => this.toggleMenu()} role='button' aria-label='Toggle menu' tabIndex='0' />
+          <button className='Header-menu-button' onClick={() => this.toggleMenu()} aria-label='Toggle menu' />
           <Link to='/' className='Header-logo' onClick={() => this.toggleMenu(false)} />
-          <nav className='Header-menu-nav' {...menuProps} >
+          <nav className='Header-menu-nav' >
             <ul className='Header-menu-nav-list'>
               { menu(location.pathname) }
             </ul>

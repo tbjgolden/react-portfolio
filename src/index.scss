@@ -28,6 +28,7 @@ body {
 
 :focus {
   outline: 0;
+
   filter: drop-shadow(0 0 .2ex);
 }
 
@@ -44,6 +45,7 @@ h2,
 h3,
 h4 {
   font-weight: 600;
+
   margin: calc(.6ex - 4px) 0;
 }
 
@@ -95,9 +97,31 @@ strong {
   font-weight: inherit;
 }
 
+button {
+  font: inherit;
+  line-height: normal;
+
+  overflow: visible;
+
+  width: auto;
+  margin: 0;
+  padding: 0;
+
+  text-align: inherit;
+
+  color: inherit;
+  border: none;
+  outline: none;
+  background: transparent;
+
+  -webkit-font-smoothing: inherit;
+  -moz-osx-font-smoothing: inherit;
+  -webkit-appearance: none;
+}
+
 .background-cover {
-  background-size: cover;
   background-position: center;
+  background-size: cover;
 }
 
 .centre,

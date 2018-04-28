@@ -18,7 +18,11 @@ const Footer = ({ isAndroid }) => {
             </div>
             <div>
               <div>Recent Posts</div>
-              { posts.slice(0, Math.min(3, posts.length)).map(({ title }) => <div key={title}><Link to='/blog'>{title}</Link></div>)}
+              {
+                posts.slice(0, Math.min(3, posts.length)).map(({ title, url }) => (
+                  <div key={title}><Link to={`/blog/${url}`}>{title}</Link></div>
+                ))
+              }
             </div>
             <div>
               <div>About This Site</div>
@@ -29,8 +33,8 @@ const Footer = ({ isAndroid }) => {
               <div>Friends</div>
               {
                 [
-                  ['Aaron Conway', 'https://aaronconway.co.uk', 'Aaron’s a great designer'],
-                  ['Jamie Mahoney', 'https://mahoneyj2.github.io/', 'Jamie’s a great programmer']
+                  ['Aaron Conway', 'https://aaronconway.co.uk', 'Aaron is an amazing designer'],
+                  ['Jamie Mahoney', 'https://mahoneyj2.github.io/', 'Jamie is an amazing programmer']
                 ].map(([text, address, description]) => (
                   <div key={text}>
                     <div>
@@ -47,7 +51,10 @@ const Footer = ({ isAndroid }) => {
             </div>
             <div>
               <div>Disclaimer</div>
-              <div>This website may or may not be inspired by an entity named after a fruit.</div>
+              <div>
+                This website may or may not be inspired by an entity named after a
+                <span className='Footer-named-after' />.
+              </div>
             </div>
           </Columns>
         </div>

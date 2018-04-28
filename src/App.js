@@ -13,20 +13,6 @@ export default class Root extends Component {
     window.addEventListener('mousemove', this.onResize.bind(this, 1000), false);
   }
 
-  componentDidMount () {
-    [...document.querySelectorAll(':not(button):not(input)[tabindex]')]
-      .forEach(el => {
-        el.addEventListener('keyup', ev => {
-          if (ev.keyCode === 13) {
-            ev.preventDefault();
-            ev.stopPropagation();
-            el.click();
-            return false;
-          }
-        })
-      })
-  }
-
   onResize (debounce = 66) {
     if (!this.resizeTimeout) {
       this.resizeTimeout = setTimeout(() => {
