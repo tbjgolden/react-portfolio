@@ -64,3 +64,11 @@
 .BlogPost a {
   border-bottom: .1ex solid;
 }
+
+@media (max-width: 767px) {
+  .BlogPost-title {
+    font-size: 32px;
+    line-height: 1.125;
+    letter-spacing: .004em;
+  }
+}
