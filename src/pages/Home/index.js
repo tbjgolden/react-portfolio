@@ -11,24 +11,24 @@ const Home = ({ screenWidth }) => (
   <div>
     <Jumbotron />
     <div className='App-row-sizer'>
-      <div className='App-row-title centre'>The best TomGolden yet.</div>
+      <div className='App-row-title centre'>The best TomGolden&nbsp;yet.</div>
       <div className='App-row-description centre'>
-        The new <Strong>TomGolden</Strong> comes with a new 15 inch MacBook Pro as standard.
+        Developer. Designer. Creator&nbsp;of&nbsp;<a href='//willtheygo.com' target='_blank' rel='noopener noreferrer'>willtheygo.com</a>.
       </div>
     </div>
     <hr className='x4' />
     <div className='App-row' style={{ height: 'calc(300px + 15vw)' }}>
       <Matrix screenWidth={screenWidth} />
       <div className='App-row-sizer'>
-        <div className='App-row-title'>TomGolden writes code.</div>
+        <div className='App-row-title'>Revolutionary algorithms.</div>
         <div className='App-row-description'>
-          <Strong>Proprietary, revolutionary algorithms.</Strong>
+          <Strong>EmojiRain&trade; &ndash; powered by the Canvas API.</Strong>
         </div>
       </div>
     </div>
     <div className='App-row white'>
       <div className='App-row-sizer'>
-        <div className='App-row-title'>TomGolden works on:</div>
+        <div className='App-row-title'>TomGolden helps you build:</div>
         <Columns>
           <div>
             <div className='App-row-header'>Web</div>

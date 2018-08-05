@@ -18,10 +18,11 @@
 }
 
 .BlogPost hr {
-  margin: 0 -24px;
+  margin: 24px -24px;
+  padding: 0;
 
-  border-top: 1px solid #ddd;
-  border-bottom: 1px solid #eee;
+  border: 0;
+  border-top: 1px dashed #ddd;
 }
 
 .BlogPost pre {
@@ -63,6 +64,16 @@
 
 .BlogPost a {
   border-bottom: .1ex solid;
+}
+
+.BlogPost h1,
+.BlogPost h2,
+.BlogPost h3,
+.BlogPost h4,
+.BlogPost h5,
+.BlogPost h6 {
+  margin-top: 1ex;
+  margin-bottom: calc(1ex + 4px);
 }
 
 @media (max-width: 767px) {

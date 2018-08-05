@@ -5,7 +5,10 @@ import Jumbotron from '../../Jumbotron';
 export default class HomeJumbotron extends Component {
   componentDidMount () {
     if (this.canvas) this.canvas.style.opacity = '0';
-    if (this.image) this.image.style.opacity = '0';
+    if (this.image) {
+      this.image.style.opacity = '0';
+      this.image.style.transform = 'translate3d(0, 20px, 0)';
+    }
 
     const ctx = this.canvas.getContext('2d');
     const laptopScreenImg = new Image();
@@ -20,7 +23,10 @@ export default class HomeJumbotron extends Component {
     laptopScreenImg.src = 'images/mylaptopscreen.jpg';
 
     Promise.all([onScreenLoad, onBgLoad]).then(() => {
-      if (this.image) this.image.style.opacity = '1';
+      if (this.image) {
+        this.image.style.opacity = '1';
+        this.image.style.transform = 'translate3d(0, 0, 0)';
+      }
 
       const width = this.canvas.width = laptopScreenImg.width;
       const height = this.canvas.height = laptopScreenImg.height;
@@ -34,12 +40,12 @@ export default class HomeJumbotron extends Component {
       const buf8 = new Uint8ClampedArray(buf);
       const data = new Uint32Array(buf);
 
-      function getPixelPointer(x, y) {
+      function getPixelPointer (x, y) {
         if (x < 0 || x >= width || y < 0 || y >= height) return null;
         return (y * width + x) << 2;
       }
 
-      function calcPixel(x, y) {
+      function calcPixel (x, y) {
         if (x < 0 || x > (width - 1)) return 0;
         const floorX = ~~x;
         const p = getPixelPointer(floorX, y);
@@ -65,7 +71,7 @@ export default class HomeJumbotron extends Component {
           const rgb = calcPixel(inpX, y);
           data[y * width + x] = rgb
             ? (255 << 24) | (rgb[2] << 16) | (rgb[1] << 8) | rgb[0]
-            : 0
+            : 0;
         }
       }
 
@@ -78,8 +84,6 @@ export default class HomeJumbotron extends Component {
       }, 800);
     });
   }
-
-
 
   render () {
     return (
