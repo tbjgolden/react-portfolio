@@ -1,8 +1,23 @@
 const xpList = [
   {
+    title: 'willtheygo.com',
+    beginMonth: 2,
+    beginYear: 2017,
+    headerLines: [
+      'Founder'
+    ],
+    paragraphs: [
+      'Creating an analytical engine to predict the likelihood of a player changing clubs in European football.',
+      'This app is currently available as a web app but will eventually be released as a mobile app.'
+    ],
+    tags: ['ft', 'job', 'nomad']
+  },
+  {
     title: 'Shipt',
     beginMonth: 2,
     beginYear: 2017,
+    endMonth: 5,
+    endYear: 2018,
     headerLines: [
       'Web Developer (React, Angular)',
       'Mobile Developer (Ionic)'
@@ -148,6 +163,10 @@ export const tags = [
           ['london', 'London'],
           ['warwick', 'Warwick']
         ]
+      ],
+      [
+        'nomad',
+        '🌍'
       ]
     ]
   ]

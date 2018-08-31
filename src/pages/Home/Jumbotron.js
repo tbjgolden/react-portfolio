@@ -13,11 +13,13 @@ export default class HomeJumbotron extends Component {
     const ctx = this.canvas.getContext('2d');
     const laptopScreenImg = new Image();
 
-    const onScreenLoad = new Promise(res => {
-      laptopScreenImg.addEventListener('load', res);
+    const onScreenLoad = new Promise(resolve => {
+      if (laptopScreenImg.complete && laptopScreenImg.naturalHeight !== 0) return resolve();
+      laptopScreenImg.addEventListener('load', resolve);
     });
-    const onBgLoad = new Promise(res => {
-      this.image.addEventListener('load', res);
+    const onBgLoad = new Promise(resolve => {
+      if (this.image.complete && this.image.naturalHeight !== 0) return resolve();
+      this.image.addEventListener('load', resolve);
     });
 
     laptopScreenImg.src = 'images/mylaptopscreen.jpg';

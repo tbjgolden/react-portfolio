@@ -28,6 +28,40 @@ class Filters extends Component {
       return activeTags.every(({ tag }) => xpItem.tags.includes(tag));
     };
 
+    const filteredList = xpList.reduce((list, xpItem) => {
+      const { title, headerLines, paragraphs, beginMonth, beginYear, endMonth, endYear } = xpItem;
+      const periodDates = {
+        beginMonth,
+        beginYear,
+        ...(endMonth ? { endMonth, endYear } : {})
+      };
+
+      if (filterFunction(xpItem)) {
+        list.push(
+          <div key={title} className='App-row Experience-block white'>
+            <div className='App-row-sizer'>
+              <Columns>
+                <div>
+                  <div className='App-row-title'>{title}</div>
+                  <Period {...periodDates} />
+                </div>
+                <div>
+                  <div className='App-row-header'>
+                    {headerLines.join('\n')}
+                  </div>
+                  <div className='App-row-description'>
+                    {paragraphs.join('\n\n')}
+                  </div>
+                </div>
+              </Columns>
+            </div>
+          </div>
+        );
+      }
+
+      return list;
+    }, []);
+
     return (
       <div className='Filters'>
         <div className='App-row white'>
@@ -95,37 +129,17 @@ class Filters extends Component {
               </div>
             )
             : (
-              xpList.map(xpItem => {
-                const { title, headerLines, paragraphs, beginMonth, beginYear, endMonth, endYear } = xpItem;
-                const periodDates = {
-                  beginMonth,
-                  beginYear,
-                  ...(endMonth ? { endMonth, endYear } : {})
-                };
-
-                return filterFunction(xpItem)
-                  ? (
-                    <div key={title} className='App-row Experience-block white'>
-                      <div className='App-row-sizer'>
-                        <Columns>
-                          <div>
-                            <div className='App-row-title'>{title}</div>
-                            <Period {...periodDates} />
-                          </div>
-                          <div>
-                            <div className='App-row-header'>
-                              {headerLines.join('\n')}
-                            </div>
-                            <div className='App-row-description'>
-                              {paragraphs.join('\n\n')}
-                            </div>
-                          </div>
-                        </Columns>
+              filteredList.length
+                ? filteredList
+                : (
+                  <div className='App-row white'>
+                    <div className='App-row-sizer'>
+                      <div className='App-row-header'>
+                        The selected combination of filters has no matches.
                       </div>
                     </div>
-                  )
-                  : null
-              })
+                  </div>
+                )
             )
         }
       </div>

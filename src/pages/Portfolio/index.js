@@ -31,27 +31,34 @@ const Portfolio = () => (
     <Gallery>
       <GalleryItem>
         <GalleryText>
+          <div className='Gallery-title'>willtheygo.com</div>
+          <div className='Gallery-description'>Analytical-engine predicting football's biggest transfers.</div>
+        </GalleryText>
+        {createPortfolioGalleryImage('images/willtheygo.com.png')}
+      </GalleryItem>
+      <GalleryItem>
+        <GalleryText>
           <div className='Gallery-title'>theboar.org</div>
           <div className='Gallery-description'>Award-winning website for student newspaper.</div>
         </GalleryText>
         {createPortfolioGalleryImage('images/theboar.org.png')}
       </GalleryItem>
-      <GalleryRow>
-        <GalleryItem>
-          <GalleryText>
-            <div className='Gallery-title'>live.gobiapp.com</div>
-            <div className='Gallery-description'>Gobi{'’'}s premium live feed of snaps.</div>
-          </GalleryText>
-          {createPortfolioGalleryImage('images/live.gobiapp.com.png')}
-        </GalleryItem>
-        <GalleryItem>
-          <GalleryText>
-            <div className='Gallery-title'>shop.shipt.com</div>
-            <div className='Gallery-description'>One of the front-end projects at Shipt.</div>
-          </GalleryText>
-          {createPortfolioGalleryImage('images/shop.shipt.com.png')}
-        </GalleryItem>
-      </GalleryRow>
+      { /* <GalleryRow> */ }
+      <GalleryItem>
+        <GalleryText>
+          <div className='Gallery-title'>live.gobiapp.com</div>
+          <div className='Gallery-description'>Gobi{'’'}s premium live feed of snaps.</div>
+        </GalleryText>
+        {createPortfolioGalleryImage('images/live.gobiapp.com.png')}
+      </GalleryItem>
+      <GalleryItem>
+        <GalleryText>
+          <div className='Gallery-title'>shop.shipt.com</div>
+          <div className='Gallery-description'>One of the front-end projects at Shipt.</div>
+        </GalleryText>
+        {createPortfolioGalleryImage('images/shop.shipt.com.png')}
+      </GalleryItem>
+      { /* </GalleryRow> */ }
     </Gallery>
   </div>
 );

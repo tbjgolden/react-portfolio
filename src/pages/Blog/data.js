@@ -104,8 +104,5 @@ export const styleSheets = [
   .Footer {
     background: #fff;
   }
-  .Footer-named-after::after {
-    content: 'number';
-  }
   `
 ];

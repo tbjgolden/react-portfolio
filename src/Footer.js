@@ -52,8 +52,7 @@ const Footer = ({ isAndroid }) => {
             <div>
               <div>Disclaimer</div>
               <div>
-                This website may or may not be inspired by an entity named after a
-                <span className='Footer-named-after' />.
+                This website's design is entirely satirical and not to be taken too literally.
               </div>
             </div>
           </Columns>
