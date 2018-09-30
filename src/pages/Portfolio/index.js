@@ -3,9 +3,10 @@ import Jumbotron from '../../Jumbotron';
 import Gallery, { GalleryItem, GalleryRow, GalleryText, GalleryImage } from '../../Gallery';
 import './index.scss';
 
-const createPortfolioGalleryImage = src => (
+const createPortfolioGalleryImage = (src, doubleWidth = false) => (
   <GalleryImage
     src={src}
+    doubleWidth={!!doubleWidth}
     bgProps={{
       src: 'images/fruitbookpro.png',
       top: '-5%',
@@ -33,7 +34,7 @@ const Portfolio = () => (
           <div className='Gallery-title'>willtheygo.com</div>
           <div className='Gallery-description'>Analytical-engine predicting football's biggest transfers.</div>
         </GalleryText>
-        {createPortfolioGalleryImage('images/willtheygo.com.png')}
+        {createPortfolioGalleryImage('images/portfolio/willtheygo.com.png')}
       </GalleryItem>
       <GalleryRow>
         <GalleryItem>
@@ -41,14 +42,14 @@ const Portfolio = () => (
             <div className='Gallery-title'>theboar.org</div>
             <div className='Gallery-description'>Award-winning website for student newspaper.</div>
           </GalleryText>
-          {createPortfolioGalleryImage('images/theboar.org.png')}
+          {createPortfolioGalleryImage('images/portfolio/theboar.org.png')}
         </GalleryItem>
         <GalleryItem>
           <GalleryText>
             <div className='Gallery-title'>tbjgolden.website</div>
             <div className='Gallery-description'>Landing page for my rapid website service.</div>
           </GalleryText>
-          {createPortfolioGalleryImage('images/tbjgolden.website.png')}
+          {createPortfolioGalleryImage('images/portfolio/tbjgolden.website.png')}
         </GalleryItem>
       </GalleryRow>
       <GalleryRow>
@@ -57,14 +58,14 @@ const Portfolio = () => (
             <div className='Gallery-title'>live.gobiapp.com</div>
             <div className='Gallery-description'>Gobi{'’'}s premium live feed of snaps.</div>
           </GalleryText>
-          {createPortfolioGalleryImage('images/live.gobiapp.com.png')}
+          {createPortfolioGalleryImage('images/portfolio/live.gobiapp.com.png')}
         </GalleryItem>
         <GalleryItem>
           <GalleryText>
             <div className='Gallery-title'>shop.shipt.com</div>
             <div className='Gallery-description'>One of the front-end projects at Shipt.</div>
           </GalleryText>
-          {createPortfolioGalleryImage('images/shop.shipt.com.png')}
+          {createPortfolioGalleryImage('images/portfolio/shop.shipt.com.png')}
         </GalleryItem>
       </GalleryRow>
     </Gallery>
