@@ -7,10 +7,23 @@
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json">
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico">
     <title>TomGolden&trade;</title>
+    <link rel="stylesheet" href="fonts.css" type="text/css">
     <script>
-      if (!/Mac(intosh|Intel|PPX|68K)/g.test(window.navigator.platform || '')) {
-        document.write('<link rel="stylesheet" href="fonts.css" type="text/css">');
-      }
+      var params = {};
+      try {
+        var url = window.location.href;
+        url = url.substring(url.indexOf('?'));
+        if (url[0] === '?') {
+          var frags = url.substring(1).split('&');
+          while (frags.length) {
+            var pair = frags.pop().split('=');
+            params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
+          }
+          if (typeof params.p === 'string' && params.p[0] === '/') {
+            window.location.href = '/#' + params.p;
+          }
+        }
+      } catch (e) { console.error(e); }
     </script>
   </head>
   <body>

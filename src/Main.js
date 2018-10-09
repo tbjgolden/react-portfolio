@@ -11,16 +11,13 @@ import './Main.scss';
 
 class Main extends Component {
   componentWillReceiveProps = nextProps => {
-    if (this.props.location.pathname !== nextProps.location.pathname) {
-      if (this.mainEl) {
-        this.mainEl.scrollIntoView()
-      }
+    if (this.props.location.pathname !== nextProps.location.pathname && this.mainEl) {
+      this.mainEl.scrollIntoView()
     }
   };
 
   render () {
     const { children, ...props } = this.props;
-
     return (
       <main className='Main' ref={el => { this.mainEl = el; }}>
         <div id='top' />
