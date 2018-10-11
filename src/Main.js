@@ -4,7 +4,6 @@ import Home from './pages/Home';
 import Portfolio from './pages/Portfolio';
 import Experience from './pages/Experience';
 import Contact from './pages/Contact';
-import Blog from './pages/Blog';
 import ComingSoon from './pages/ComingSoon';
 import NotFound from './pages/NotFound';
 import './Main.scss';
@@ -27,7 +26,6 @@ class Main extends Component {
           <Route exact path="/experience" render={() => <Experience {...props} />}/>
           <Route exact path="/contact" render={() => <Contact {...props} />}/>
           <Route exact path="/about-this-site" render={() => <ComingSoon {...props} />}/>
-          <Route path="/blog" render={() => <Blog {...props} />}/>
           <Route render={() => <NotFound />}/>
         </Switch>
       </main>

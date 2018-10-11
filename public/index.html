@@ -20,7 +20,7 @@
             params[decodeURIComponent(pair[0])] = decodeURIComponent(pair[1]);
           }
           if (typeof params.p === 'string' && params.p[0] === '/') {
-            window.location.href = '/#' + params.p;
+            window.location.href = params.p;
           }
         }
       } catch (e) { console.error(e); }

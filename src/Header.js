@@ -6,8 +6,7 @@ export const routes = [
   { title: 'Portfolio', url: '/portfolio' },
   { title: 'Experience', url: '/experience' },
   { title: 'Contact', url: '/contact' },
-  // { title: 'About This Site', url: '/about-this-site' },
-  { title: 'Blog', url: '/blog' }
+  { title: 'Blog', url: '//tbjgolden.com/blog' }
 ];
 
 class Header extends Component {
@@ -15,13 +14,18 @@ class Header extends Component {
 
   menu = active =>
     ((items =>
-      items.map(({ url, title }) => (
-        <li key={url} className='Header-menu-nav-list-item'>
-          <Link to={url} className={`Header-menu-nav-list-item-link ${active === url ? 'active' : ''}`}>
-            {title}
-          </Link>
-        </li>
-      ))
+      items.map(({ url, title }) => {
+        const linkClassName = `Header-menu-nav-list-item-link ${active === url ? 'active' : ''}`;
+        return (
+          <li key={url} className='Header-menu-nav-list-item'>
+            {
+              (url[0] === '/' && url[1] === '/')
+                ? <a href={url} className={linkClassName} alt={title}>{title}</a>
+                : <Link to={url} className={linkClassName}>{title}</Link>
+            }
+          </li>
+        );
+      })
     )(routes));
 
   componentDidMount = () => {

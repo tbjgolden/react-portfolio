@@ -1,7 +1,6 @@
 import React from 'react';
 import Columns from './Columns';
 import { routes } from './Header';
-import { posts } from './pages/Blog/data';
 import { Link } from 'react-router-dom';
 import './Footer.scss';
 
@@ -18,11 +17,7 @@ const Footer = ({ isAndroid }) => {
             </div>
             <div>
               <div>Recent Posts</div>
-              {
-                posts.slice(0, Math.min(3, posts.length)).map(({ title, url }) => (
-                  <div key={title}><Link to={`/blog/${url}`}>{title}</Link></div>
-                ))
-              }
+              <div>(this needs to be changed)</div>
             </div>
             <div>
               <div>About This Site</div>
