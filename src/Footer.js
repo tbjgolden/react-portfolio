@@ -13,7 +13,7 @@ class Footer extends Component {
       blogPosts: []
     };
 
-    window.fetch(`${blogRoot}/generated/posts.json`)
+    window.fetch(`${blogRoot}/posts/index.json`)
       .then(res => res.json())
       .then(blogPosts => {
         if (Array.isArray(blogPosts)) this.setState({ blogPosts });
@@ -55,10 +55,10 @@ class Footer extends Component {
                     ? (
                       blogPosts.length
                         ? (
-                          blogPosts.reverse().slice(0, Math.min(blogPosts.length, 3)).map(post =>
+                          blogPosts.reverse().slice(0, Math.min(blogPosts.length, 2)).map(post =>
                             <div key={post.id}>
                               <a href={`${blogRoot}/#/posts/${post.id}`}>
-                                {`${post.title} – ${post.date.join('/')}`}
+                                {`${post.title} – ${new Date(post.timestamp).toLocaleDateString()}`}
                               </a>
                             </div>
                           )
