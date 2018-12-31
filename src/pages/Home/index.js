@@ -13,7 +13,7 @@ const Home = ({ screenWidth }) => (
     <div className='App-row-sizer'>
       <div className='App-row-title centre'>The best TomGolden&nbsp;yet.</div>
       <div className='App-row-description centre'>
-        Developer. Designer. Creator&nbsp;of&nbsp;<a href='//willtheygo.com' target='_blank' rel='noopener noreferrer'>willtheygo.com</a>.
+        Developer. Designer. Creator&nbsp;of&nbsp;<a href='http://willtheygo.com' target='_blank' rel='noopener noreferrer'>willtheygo.com</a>.
       </div>
     </div>
     <hr className='x4' />
